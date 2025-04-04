@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+// Package for generated Java code
+option java_package = "com.dbmapp.dbmapp.grpc";
+option java_outer_classname = "CSVImportServiceImpl";
+
+// CSV import will be client-streaming — client sends multiple rows to server
+service CSVImport {
+
+  // Client sends multiple CSV rows, server responds when done
+  rpc ImportCSV (stream CSVRow) returns (ConfirmationMessage);
+}
+
+/*
+ * Message: CSVRow
+ * -----------------------------------------------
+ * Represents one row of CSV data sent to the server.
+ * The data is modeled as repeated string to support dynamic headers.
+ */
+message CSVRow {
+  string schema_name = 1;      // Schema to import into
+  string table_name = 2;       // Table to import into
+  repeated string values = 3;  // The actual values of the CSV row
+}
+
+/*
+ * Message: ConfirmationMessage
+ * -----------------------------------------------
+ * Confirms success or failure of the CSV import.
+ */
+message ConfirmationMessage {
+  bool ok = 1;        // True if import was successful
+  string message = 2; // Optional message for logging/debugging
+}
+

@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+// Package structure for generated Java code
+option java_package = "com.dbmapp.dbmapp.grpc";
+option java_outer_classname = "TableManagementServiceImpl";
+
+// Message avoids the need to create unnecessary messages when no data is required
+import "google/protobuf/empty.proto";
+
+/*
+ * Service: TableManagement
+ * -----------------------------------------------
+ * This service handles table operations within a given schema:
+ * 1. Create a table
+ * 2. Drop a specific table from a schema
+ * 3. List all tables within a schema
+ */
+service TableManagement {
+
+  // Creates a table with default structure (Unary RPC)
+  rpc CreateTable (TableRequest) returns (ConfirmationMessage);
+
+  // Deletes a table (Unary RPC)
+  rpc DropTable (TableRequest) returns (ConfirmationMessage);
+
+  // Lists all tables in a schema (Server Streaming RPC)
+  rpc ListTables (SchemaRequest) returns (stream TableResponse);
+}
+
+/*
+ * Message: TableRequest
+ * -----------------------------------------------
+ * Used to refer to a specific table within a given schema.
+ */
+message TableRequest {
+  string schema_name = 1; // The schema where the table
+  string table_name = 2;  // The table to be created/dropped
+}
+
+/*
+ * Message: SchemaRequest
+ * -----------------------------------------------
+ * Reused here for listing tables in a schema.
+ */
+message SchemaRequest {
+  string schema_name = 1; // The name of the schema to scan for tables
+}
+
+/*
+ * Message: TableResponse
+ * -----------------------------------------------
+ * Used to return one table name at a time (streamed).
+ */
+message TableResponse {
+  string table_name = 1; // A single table name in the schema
+}
+
+/*
+ * Message: ConfirmationMessage
+ * -----------------------------------------------
+ * Used to confirm if the operation was successful.
+ */
+message ConfirmationMessage {
+  bool ok = 1;        // True if the operation succeeded
+  string message = 2; // Optional message (success or error description)
+}
+

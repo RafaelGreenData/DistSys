@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+// Package structure for generated Java code
+option java_package = "com.dbmapp.dbmapp.grpc";
+option java_outer_classname = "DatabaseManagementServiceImpl";
+
+// Message avoids the need to create unnecessary messages when no data is required
+import "google/protobuf/empty.proto";
+
+/*
+ * Service: DatabaseManagement
+ * -----------------------------------------------
+ * This service handles schema operations:
+ * 1. Create a new database schema
+ * 2. List all existing schemas (server streaming)
+ * 3. Delete a specified schema
+ */
+
+service DatabaseManagement {
+  
+  // Creates a new schema in the database (Unary RPC)
+  rpc CreateSchema (SchemaRequest) returns (ConfirmationMessage);
+
+  // Streams all schema names to the client (Server Streaming RPC)
+  rpc ListSchemas (google.protobuf.Empty) returns (stream SchemaResponse);
+
+  // Deletes a specified schema (Unary RPC)
+  rpc DeleteSchema (SchemaRequest) returns (ConfirmationMessage);
+}
+
+/*
+ * Message: SchemaRequest
+ * -----------------------------------------------
+ * Used for creating or deleting a database schema.
+ */
+message SchemaRequest {
+  string schema_name = 1; // Name of the schema (database) to manage
+}
+
+/*
+ * Message: SchemaResponse
+ * -----------------------------------------------
+ * Used to stream a list of existing schemas from the server.
+ */
+message SchemaResponse {
+  string schema_name = 1; // Name of a single schema in the list
+}
+
+/*
+ * Message: ConfirmationMessage
+ * -----------------------------------------------
+ * Generic response message for confirming success or failure.
+ */
+message ConfirmationMessage {
+  bool ok = 1;        // true if the operation succeeded, false otherwise
+  string message = 2; // Descriptive result message for logging/debugging
+}
