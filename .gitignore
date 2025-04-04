@@ -1,0 +1,38 @@
+# Maven
+/target/
+*.log
+*.class
+dependency-reduced-pom.xml
+buildNumber.properties
+release.properties
+
+# NetBeans-specific files
+nbproject/private/
+build/
+dist/
+nbbuild/
+nbdist/
+*.bak
+*.swp
+
+# Logs
+*.log
+
+# Protocol Buffers - generated files
+**/*Grpc.java
+**/*Proto.java
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs and tooling
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# JAR files (if generated locally)
+*.jar
