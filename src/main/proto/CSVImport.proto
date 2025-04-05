@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 // Package for generated Java code
-option java_package = "com.dbmapp.dbmapp.grpc";
+option java_package = "com.dbmapp.grpc";
 option java_outer_classname = "CSVImportServiceImpl";
 
 // CSV import will be client-streaming — client sends multiple rows to server
