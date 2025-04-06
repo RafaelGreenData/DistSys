@@ -1,67 +1,53 @@
 syntax = "proto3";
 
-// Package structure for generated Java code
+option java_multiple_files = true;
 option java_package = "com.dbmapp.grpc";
 option java_outer_classname = "TableManagementServiceImpl";
 
-// Message avoids the need to create unnecessary messages when no data is required
-import "google/protobuf/empty.proto";
+package tablemanagement;
 
-/*
- * Service: TableManagement
- * -----------------------------------------------
- * This service handles table operations within a given schema:
- * 1. Create a table
- * 2. Drop a specific table from a schema
- * 3. List all tables within a schema
- */
+// Service definition for managing tables
 service TableManagement {
+  // List all tables in a schema
+  rpc GetTables (SchemaRequest) returns (TableListResponse);
 
-  // Creates a table with default structure (Unary RPC)
-  rpc CreateTable (TableRequest) returns (ConfirmationMessage);
+  // View data from a specific table, limited by user
+  rpc ViewTableData (TableRequest) returns (TableDataResponse);
 
-  // Deletes a table (Unary RPC)
+  // Drop an existing table
   rpc DropTable (TableRequest) returns (ConfirmationMessage);
-
-  // Lists all tables in a schema (Server Streaming RPC)
-  rpc ListTables (SchemaRequest) returns (stream TableResponse);
 }
 
-/*
- * Message: TableRequest
- * -----------------------------------------------
- * Used to refer to a specific table within a given schema.
- */
-message TableRequest {
-  string schema_name = 1; // The schema where the table
-  string table_name = 2;  // The table to be created/dropped
-}
-
-/*
- * Message: SchemaRequest
- * -----------------------------------------------
- * Reused here for listing tables in a schema.
- */
+// Request to specify a schema
 message SchemaRequest {
-  string schema_name = 1; // The name of the schema to scan for tables
+  string schemaName = 1;
 }
 
-/*
- * Message: TableResponse
- * -----------------------------------------------
- * Used to return one table name at a time (streamed).
- */
-message TableResponse {
-  string table_name = 1; // A single table name in the schema
+// Request to specify a table and the number of rows to fetch
+message TableRequest {
+  string schemaName = 1;
+  string tableName = 2;
+  int32 rowLimit = 3; // Number of rows to retrieve
 }
 
-/*
- * Message: ConfirmationMessage
- * -----------------------------------------------
- * Used to confirm if the operation was successful.
- */
+// Response containing list of tables
+message TableListResponse {
+  repeated string tables = 1;
+}
+
+// Response containing table data (column names and rows)
+message TableDataResponse {
+  repeated string columnNames = 1;
+  repeated RowData rows = 2;
+}
+
+// Represents a single row of data
+message RowData {
+  repeated string values = 1;
+}
+
+// Generic confirmation message for actions
 message ConfirmationMessage {
-  bool ok = 1;        // True if the operation succeeded
-  string message = 2; // Optional message (success or error description)
+  bool ok = 1;
+  string message = 2;
 }
-
