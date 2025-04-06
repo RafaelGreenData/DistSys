@@ -1,59 +1,65 @@
 package com.dbmapp.client;
 
 import com.dbmapp.grpc.DatabaseManagementGrpc;
-import com.dbmapp.grpc.DatabaseManagementGrpc.DatabaseManagementBlockingStub;
-import com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest;
-import com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse;
-import com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage;
+import com.dbmapp.grpc.DatabaseManagementServiceImpl.*;
+
 import com.google.protobuf.Empty;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.StatusRuntimeException;
 
+import java.util.Iterator;
+
+// Client wrapper for interacting with the DatabaseManagement gRPC service
 public class DatabaseManagementClient {
 
-    public static void main(String[] args) {
-        // Connect to server
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051)
-                .usePlaintext()
-                .build();
+    // gRPC blocking stub
+    private final DatabaseManagementGrpc.DatabaseManagementBlockingStub blockingStub;
 
-        // Create stub
-        DatabaseManagementBlockingStub stub = DatabaseManagementGrpc.newBlockingStub(channel);
+    // Constructor: initializes stub with a managed channel
+    public DatabaseManagementClient(ManagedChannel channel) {
+        blockingStub = DatabaseManagementGrpc.newBlockingStub(channel);
+    }
 
-        // Example schema name
-        String schemaName = "test_schema";
-
-        // 1. Create schema
-        SchemaRequest createRequest = SchemaRequest.newBuilder()
+    // Create a new schema on the server
+    public void createSchema(String schemaName) {
+        SchemaRequest request = SchemaRequest.newBuilder()
                 .setSchemaName(schemaName)
                 .build();
 
         try {
-            ConfirmationMessage createResponse = stub.createSchema(createRequest);
-            System.out.println("Create Schema Response: " + createResponse.getMessage());
-        } catch (Exception e) {
-            System.out.println("Error creating schema: " + e.getMessage());
+            ConfirmationMessage response = blockingStub.createSchema(request);
+            System.out.println("➕ Create Schema: " + response.getMessage());
+        } catch (StatusRuntimeException e) {
+            System.err.println("gRPC error during schema creation: " + e.getStatus().getDescription());
         }
+    }
 
-        // 2. List schemas
+    // Delete a schema from the server
+    public void deleteSchema(String schemaName) {
+        SchemaRequest request = SchemaRequest.newBuilder()
+                .setSchemaName(schemaName)
+                .build();
+
         try {
-            System.out.println("\nListing Schemas:");
-            stub.listSchemas(Empty.newBuilder().build()).forEachRemaining(response -> {
-                System.out.println("- " + response.getSchemaName());
-            });
-        } catch (Exception e) {
-            System.out.println("Error listing schemas: " + e.getMessage());
+            ConfirmationMessage response = blockingStub.deleteSchema(request);
+            System.out.println("❌ Delete Schema: " + response.getMessage());
+        } catch (StatusRuntimeException e) {
+            System.err.println("gRPC error during schema deletion: " + e.getStatus().getDescription());
         }
+    }
 
-        // 3. Delete schema
+    // List all schemas available on the server
+    public void listSchemas() {
         try {
-            ConfirmationMessage deleteResponse = stub.deleteSchema(createRequest);
-            System.out.println("\nDelete Schema Response: " + deleteResponse.getMessage());
-        } catch (Exception e) {
-            System.out.println("Error deleting schema: " + e.getMessage());
+            Iterator<SchemaResponse> responses = blockingStub.listSchemas(Empty.getDefaultInstance());
+            System.out.println("📂 Schemas in database:");
+            while (responses.hasNext()) {
+                SchemaResponse schema = responses.next();
+                System.out.println(" - " + schema.getSchemaName());
+            }
+        } catch (StatusRuntimeException e) {
+            System.err.println("gRPC error during schema listing: " + e.getStatus().getDescription());
         }
-
-        // Shutdown
-        channel.shutdown();
     }
 }
