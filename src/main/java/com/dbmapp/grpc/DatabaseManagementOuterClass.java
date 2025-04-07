@@ -3,8 +3,8 @@
 
 package com.dbmapp.grpc;
 
-public final class DatabaseManagementServiceImpl {
-  private DatabaseManagementServiceImpl() {}
+public final class DatabaseManagementOuterClass {
+  private DatabaseManagementOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -109,15 +109,15 @@ public final class DatabaseManagementServiceImpl {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_SchemaRequest_descriptor;
+      return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_SchemaRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_SchemaRequest_fieldAccessorTable
+      return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_SchemaRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest.class, com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest.Builder.class);
+              com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest.class, com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest.Builder.class);
     }
 
     public static final int SCHEMA_NAME_FIELD_NUMBER = 1;
@@ -201,10 +201,10 @@ public final class DatabaseManagementServiceImpl {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest)) {
+      if (!(obj instanceof com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest)) {
         return super.equals(obj);
       }
-      com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest other = (com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest) obj;
+      com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest other = (com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest) obj;
 
       boolean result = true;
       result = result && getSchemaName()
@@ -227,69 +227,69 @@ public final class DatabaseManagementServiceImpl {
       return hash;
     }
 
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest parseFrom(byte[] data)
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest parseFrom(java.io.InputStream input)
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest parseDelimitedFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -302,7 +302,7 @@ public final class DatabaseManagementServiceImpl {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest prototype) {
+    public static Builder newBuilder(com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -329,21 +329,21 @@ public final class DatabaseManagementServiceImpl {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:SchemaRequest)
-        com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequestOrBuilder {
+        com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_SchemaRequest_descriptor;
+        return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_SchemaRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_SchemaRequest_fieldAccessorTable
+        return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_SchemaRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest.class, com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest.Builder.class);
+                com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest.class, com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest.Builder.class);
       }
 
-      // Construct using com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest.newBuilder()
+      // Construct using com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -369,17 +369,17 @@ public final class DatabaseManagementServiceImpl {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_SchemaRequest_descriptor;
+        return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_SchemaRequest_descriptor;
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest getDefaultInstanceForType() {
-        return com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest.getDefaultInstance();
+      public com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest getDefaultInstanceForType() {
+        return com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest build() {
-        com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest result = buildPartial();
+      public com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest build() {
+        com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -387,8 +387,8 @@ public final class DatabaseManagementServiceImpl {
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest buildPartial() {
-        com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest result = new com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest(this);
+      public com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest buildPartial() {
+        com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest result = new com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest(this);
         result.schemaName_ = schemaName_;
         onBuilt();
         return result;
@@ -428,16 +428,16 @@ public final class DatabaseManagementServiceImpl {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest) {
-          return mergeFrom((com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest)other);
+        if (other instanceof com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest) {
+          return mergeFrom((com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest other) {
-        if (other == com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest other) {
+        if (other == com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest.getDefaultInstance()) return this;
         if (!other.getSchemaName().isEmpty()) {
           schemaName_ = other.schemaName_;
           onChanged();
@@ -457,11 +457,11 @@ public final class DatabaseManagementServiceImpl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest parsedMessage = null;
+        com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -576,12 +576,12 @@ public final class DatabaseManagementServiceImpl {
     }
 
     // @@protoc_insertion_point(class_scope:SchemaRequest)
-    private static final com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest DEFAULT_INSTANCE;
+    private static final com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest();
+      DEFAULT_INSTANCE = new com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest();
     }
 
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest getDefaultInstance() {
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -606,7 +606,7 @@ public final class DatabaseManagementServiceImpl {
     }
 
     @java.lang.Override
-    public com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaRequest getDefaultInstanceForType() {
+    public com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -707,15 +707,15 @@ public final class DatabaseManagementServiceImpl {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_SchemaResponse_descriptor;
+      return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_SchemaResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_SchemaResponse_fieldAccessorTable
+      return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_SchemaResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse.class, com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse.Builder.class);
+              com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse.class, com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse.Builder.class);
     }
 
     public static final int SCHEMA_NAME_FIELD_NUMBER = 1;
@@ -799,10 +799,10 @@ public final class DatabaseManagementServiceImpl {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse)) {
+      if (!(obj instanceof com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse)) {
         return super.equals(obj);
       }
-      com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse other = (com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse) obj;
+      com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse other = (com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse) obj;
 
       boolean result = true;
       result = result && getSchemaName()
@@ -825,69 +825,69 @@ public final class DatabaseManagementServiceImpl {
       return hash;
     }
 
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse parseFrom(byte[] data)
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse parseFrom(java.io.InputStream input)
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse parseDelimitedFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -900,7 +900,7 @@ public final class DatabaseManagementServiceImpl {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse prototype) {
+    public static Builder newBuilder(com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -927,21 +927,21 @@ public final class DatabaseManagementServiceImpl {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:SchemaResponse)
-        com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponseOrBuilder {
+        com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_SchemaResponse_descriptor;
+        return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_SchemaResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_SchemaResponse_fieldAccessorTable
+        return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_SchemaResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse.class, com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse.Builder.class);
+                com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse.class, com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse.Builder.class);
       }
 
-      // Construct using com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse.newBuilder()
+      // Construct using com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -967,17 +967,17 @@ public final class DatabaseManagementServiceImpl {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_SchemaResponse_descriptor;
+        return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_SchemaResponse_descriptor;
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse getDefaultInstanceForType() {
-        return com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse.getDefaultInstance();
+      public com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse getDefaultInstanceForType() {
+        return com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse build() {
-        com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse result = buildPartial();
+      public com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse build() {
+        com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -985,8 +985,8 @@ public final class DatabaseManagementServiceImpl {
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse buildPartial() {
-        com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse result = new com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse(this);
+      public com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse buildPartial() {
+        com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse result = new com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse(this);
         result.schemaName_ = schemaName_;
         onBuilt();
         return result;
@@ -1026,16 +1026,16 @@ public final class DatabaseManagementServiceImpl {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse) {
-          return mergeFrom((com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse)other);
+        if (other instanceof com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse) {
+          return mergeFrom((com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse other) {
-        if (other == com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse other) {
+        if (other == com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse.getDefaultInstance()) return this;
         if (!other.getSchemaName().isEmpty()) {
           schemaName_ = other.schemaName_;
           onChanged();
@@ -1055,11 +1055,11 @@ public final class DatabaseManagementServiceImpl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse parsedMessage = null;
+        com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse) e.getUnfinishedMessage();
+          parsedMessage = (com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1174,12 +1174,12 @@ public final class DatabaseManagementServiceImpl {
     }
 
     // @@protoc_insertion_point(class_scope:SchemaResponse)
-    private static final com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse DEFAULT_INSTANCE;
+    private static final com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse();
+      DEFAULT_INSTANCE = new com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse();
     }
 
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse getDefaultInstance() {
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1204,7 +1204,7 @@ public final class DatabaseManagementServiceImpl {
     }
 
     @java.lang.Override
-    public com.dbmapp.grpc.DatabaseManagementServiceImpl.SchemaResponse getDefaultInstanceForType() {
+    public com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1320,15 +1320,15 @@ public final class DatabaseManagementServiceImpl {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_ConfirmationMessage_descriptor;
+      return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_ConfirmationMessage_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_ConfirmationMessage_fieldAccessorTable
+      return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_ConfirmationMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage.class, com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage.Builder.class);
+              com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage.class, com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage.Builder.class);
     }
 
     public static final int OK_FIELD_NUMBER = 1;
@@ -1432,10 +1432,10 @@ public final class DatabaseManagementServiceImpl {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage)) {
+      if (!(obj instanceof com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage)) {
         return super.equals(obj);
       }
-      com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage other = (com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage) obj;
+      com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage other = (com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage) obj;
 
       boolean result = true;
       result = result && (getOk()
@@ -1463,69 +1463,69 @@ public final class DatabaseManagementServiceImpl {
       return hash;
     }
 
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage parseFrom(byte[] data)
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage parseFrom(java.io.InputStream input)
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage parseDelimitedFrom(java.io.InputStream input)
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage parseDelimitedFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage parseFrom(
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1538,7 +1538,7 @@ public final class DatabaseManagementServiceImpl {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage prototype) {
+    public static Builder newBuilder(com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1565,21 +1565,21 @@ public final class DatabaseManagementServiceImpl {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:ConfirmationMessage)
-        com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessageOrBuilder {
+        com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_ConfirmationMessage_descriptor;
+        return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_ConfirmationMessage_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_ConfirmationMessage_fieldAccessorTable
+        return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_ConfirmationMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage.class, com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage.Builder.class);
+                com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage.class, com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage.Builder.class);
       }
 
-      // Construct using com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage.newBuilder()
+      // Construct using com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1607,17 +1607,17 @@ public final class DatabaseManagementServiceImpl {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dbmapp.grpc.DatabaseManagementServiceImpl.internal_static_ConfirmationMessage_descriptor;
+        return com.dbmapp.grpc.DatabaseManagementOuterClass.internal_static_ConfirmationMessage_descriptor;
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage getDefaultInstanceForType() {
-        return com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage.getDefaultInstance();
+      public com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage getDefaultInstanceForType() {
+        return com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage build() {
-        com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage result = buildPartial();
+      public com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage build() {
+        com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1625,8 +1625,8 @@ public final class DatabaseManagementServiceImpl {
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage buildPartial() {
-        com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage result = new com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage(this);
+      public com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage buildPartial() {
+        com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage result = new com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage(this);
         result.ok_ = ok_;
         result.message_ = message_;
         onBuilt();
@@ -1667,16 +1667,16 @@ public final class DatabaseManagementServiceImpl {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage) {
-          return mergeFrom((com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage)other);
+        if (other instanceof com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage) {
+          return mergeFrom((com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage other) {
-        if (other == com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage other) {
+        if (other == com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage.getDefaultInstance()) return this;
         if (other.getOk() != false) {
           setOk(other.getOk());
         }
@@ -1699,11 +1699,11 @@ public final class DatabaseManagementServiceImpl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage parsedMessage = null;
+        com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage) e.getUnfinishedMessage();
+          parsedMessage = (com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1856,12 +1856,12 @@ public final class DatabaseManagementServiceImpl {
     }
 
     // @@protoc_insertion_point(class_scope:ConfirmationMessage)
-    private static final com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage DEFAULT_INSTANCE;
+    private static final com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage();
+      DEFAULT_INSTANCE = new com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage();
     }
 
-    public static com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage getDefaultInstance() {
+    public static com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1886,7 +1886,7 @@ public final class DatabaseManagementServiceImpl {
     }
 
     @java.lang.Override
-    public com.dbmapp.grpc.DatabaseManagementServiceImpl.ConfirmationMessage getDefaultInstanceForType() {
+    public com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1925,8 +1925,7 @@ public final class DatabaseManagementServiceImpl {
       "\024.ConfirmationMessage\0228\n\013ListSchemas\022\026.g" +
       "oogle.protobuf.Empty\032\017.SchemaResponse0\001\022" +
       "4\n\014DeleteSchema\022\016.SchemaRequest\032\024.Confir" +
-      "mationMessageB0\n\017com.dbmapp.grpcB\035Databa" +
-      "seManagementServiceImplb\006proto3"
+      "mationMessageB\021\n\017com.dbmapp.grpcb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

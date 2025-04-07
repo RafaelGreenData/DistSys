@@ -2,15 +2,18 @@ package com.dbmapp;
 
 import com.dbmapp.server.DatabaseManagementServer;
 import com.dbmapp.server.TableManagementServer;
+import com.dbmapp.server.CSVImportServer;
 
 import com.dbmapp.client.DatabaseManagementClient;
 import com.dbmapp.client.TableManagementClient;
+import com.dbmapp.client.CSVImportClient;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class DbmApp {
@@ -18,29 +21,28 @@ public class DbmApp {
         int port = 50051;
 
         try {
-            // Start gRPC server with both services
             Server server = ServerBuilder.forPort(port)
                     .addService(new DatabaseManagementServer())
                     .addService(new TableManagementServer())
+                    .addService(new CSVImportServer())
                     .build()
                     .start();
 
             System.out.println("✅ DBMApp Server started on port " + port);
 
-            // Create gRPC channel
             ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", port)
                     .usePlaintext()
                     .build();
 
-            // Initialize clients
             DatabaseManagementClient dbClient = new DatabaseManagementClient(channel);
             TableManagementClient tableClient = new TableManagementClient(channel);
+            CSVImportClient csvClient = new CSVImportClient(channel, tableClient);
+
 
             Scanner scanner = new Scanner(System.in);
             String activeSchema = null;
 
             while (true) {
-                // MAIN MENU
                 System.out.println("\n📚 DBMApp - Main Menu");
                 System.out.println("1. Create Schema");
                 System.out.println("2. List Schemas");
@@ -64,17 +66,16 @@ public class DbmApp {
                         break;
                     case 4:
                         System.out.print("Enter schema name to use: ");
-                        String selected = scanner.nextLine();
-                        activeSchema = selected;
+                        activeSchema = scanner.nextLine();
                         System.out.println("📁 Now working on schema: " + activeSchema);
-                        // Go to TABLE MENU
                         boolean inTableMenu = true;
                         while (inTableMenu) {
                             System.out.println("\n📁 Schema: " + activeSchema);
                             System.out.println("1. List Tables");
                             System.out.println("2. View Table Data");
                             System.out.println("3. Drop Table");
-                            System.out.println("4. Back to Main Menu");
+                            System.out.println("4. Import CSV and Create Table");
+                            System.out.println("5. Back to Main Menu");
                             System.out.print("Choose an option: ");
                             int tableChoice = Integer.parseInt(scanner.nextLine());
 
@@ -95,6 +96,13 @@ public class DbmApp {
                                     tableClient.dropTable(activeSchema, tableToDrop);
                                     break;
                                 case 4:
+                                    System.out.print("Enter table name to create: ");
+                                    String newTable = scanner.nextLine();
+                                    System.out.print("Enter full CSV file path: ");
+                                    String csvPath = scanner.nextLine();
+                                    csvClient.importCSVAndCreateTable(activeSchema, newTable, csvPath);
+                                    break;
+                                case 7:
                                     inTableMenu = false;
                                     activeSchema = null;
                                     System.out.println("⬅️ Returning to Main Menu...");

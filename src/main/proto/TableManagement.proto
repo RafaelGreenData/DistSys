@@ -1,53 +1,53 @@
 syntax = "proto3";
 
-option java_multiple_files = true;
+
 option java_package = "com.dbmapp.grpc";
-option java_outer_classname = "TableManagementServiceImpl";
 
 package tablemanagement;
 
-// Service definition for managing tables
 service TableManagement {
-  // List all tables in a schema
   rpc GetTables (SchemaRequest) returns (TableListResponse);
-
-  // View data from a specific table, limited by user
   rpc ViewTableData (TableRequest) returns (TableDataResponse);
-
-  // Drop an existing table
   rpc DropTable (TableRequest) returns (ConfirmationMessage);
+
+  // Novo RPC para executar comandos SQL (como CREATE TABLE)
+  rpc ExecuteSQL (SQLRequest) returns (GenericResponse);
 }
 
-// Request to specify a schema
 message SchemaRequest {
   string schemaName = 1;
 }
 
-// Request to specify a table and the number of rows to fetch
 message TableRequest {
   string schemaName = 1;
   string tableName = 2;
-  int32 rowLimit = 3; // Number of rows to retrieve
+  int32 row_Limit = 3;
 }
 
-// Response containing list of tables
 message TableListResponse {
   repeated string tables = 1;
 }
 
-// Response containing table data (column names and rows)
 message TableDataResponse {
   repeated string columnNames = 1;
   repeated RowData rows = 2;
 }
 
-// Represents a single row of data
 message RowData {
   repeated string values = 1;
 }
 
-// Generic confirmation message for actions
 message ConfirmationMessage {
+  bool ok = 1;
+  string message = 2;
+}
+
+message SQLRequest {
+  string schemaName = 1;
+  string sqlStatement = 2;
+}
+
+message GenericResponse {
   bool ok = 1;
   string message = 2;
 }

@@ -1,18 +1,20 @@
 package com.dbmapp.client;
 
 import com.dbmapp.grpc.TableManagementGrpc;
-import com.dbmapp.grpc.SchemaRequest;
-import com.dbmapp.grpc.TableRequest;
-import com.dbmapp.grpc.TableListResponse;
-import com.dbmapp.grpc.TableDataResponse;
-import com.dbmapp.grpc.RowData;
-import com.dbmapp.grpc.ConfirmationMessage;
+import com.dbmapp.grpc.TableManagementOuterClass.SchemaRequest;
+import com.dbmapp.grpc.TableManagementOuterClass.TableRequest;
+import com.dbmapp.grpc.TableManagementOuterClass.TableListResponse;
+import com.dbmapp.grpc.TableManagementOuterClass.TableDataResponse;
+import com.dbmapp.grpc.TableManagementOuterClass.RowData;
+import com.dbmapp.grpc.TableManagementOuterClass.ConfirmationMessage;
+import com.dbmapp.grpc.TableManagementOuterClass.SQLRequest;
+import com.dbmapp.grpc.TableManagementOuterClass.GenericResponse;
+
 
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
 
 import java.util.List;
-import java.util.Scanner;
 
 // gRPC client for interacting with TableManagement service
 public class TableManagementClient {
@@ -86,10 +88,27 @@ public class TableManagementClient {
             System.err.println("❌ Failed to drop table: " + e.getMessage());
         }
     }
+    
+    public void executeSQL(String schema, String sqlStatement) {
+        SQLRequest request = SQLRequest.newBuilder()
+                .setSchemaName(schema)
+                .setSqlStatement(sqlStatement)
+                .build();
+        GenericResponse response = blockingStub.executeSQL(request);
 
+        if (response.getOk()) {
+            System.out.println("✅ Table created successfully.");
+        } else {
+            System.out.println("❌ Failed to create table: " + response.getMessage());
+        }
+
+    /**
     // Optional CLI interface for testing
     public static void main(String[] args) {
-        // This is just for testing purposes; the real entry point is DbmApp
+        //testing
         System.out.println("This is a gRPC client and should be called from DbmApp.");
     }
+    */
 }
+}
+

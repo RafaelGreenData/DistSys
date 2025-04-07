@@ -1,13 +1,14 @@
 package com.dbmapp.server;
 
-// Correct imports for gRPC base class and generated messages
 import com.dbmapp.grpc.TableManagementGrpc;
-import com.dbmapp.grpc.SchemaRequest;
-import com.dbmapp.grpc.TableRequest;
-import com.dbmapp.grpc.TableListResponse;
-import com.dbmapp.grpc.TableDataResponse;
-import com.dbmapp.grpc.RowData;
-import com.dbmapp.grpc.ConfirmationMessage;
+import com.dbmapp.grpc.TableManagementOuterClass.ConfirmationMessage;
+import com.dbmapp.grpc.TableManagementOuterClass.SchemaRequest;
+import com.dbmapp.grpc.TableManagementOuterClass.GenericResponse;
+import com.dbmapp.grpc.TableManagementOuterClass.RowData;
+import com.dbmapp.grpc.TableManagementOuterClass.SQLRequest;
+import com.dbmapp.grpc.TableManagementOuterClass.TableDataResponse;
+import com.dbmapp.grpc.TableManagementOuterClass.TableListResponse;
+import com.dbmapp.grpc.TableManagementOuterClass.TableRequest;
 
 import io.grpc.stub.StreamObserver;
 
@@ -90,7 +91,6 @@ public class TableManagementServer extends TableManagementGrpc.TableManagementIm
         }
     }
 
-    // Drop a table from the schema
     @Override
     public void dropTable(TableRequest request, StreamObserver<ConfirmationMessage> responseObserver) {
         String schemaName = request.getSchemaName();
@@ -118,4 +118,34 @@ public class TableManagementServer extends TableManagementGrpc.TableManagementIm
             responseObserver.onCompleted();
         }
     }
+
+    
+    @Override
+    public void executeSQL(SQLRequest request, StreamObserver<GenericResponse> responseObserver) {
+        String schema = request.getSchemaName();
+        String sql = request.getSqlStatement();
+        try (Connection conn = DriverManager.getConnection(JDBC_URL_PREFIX + schema, DB_USER, DB_PASSWORD);
+             Statement stmt = conn.createStatement()) {
+
+            stmt.execute(sql);
+
+            GenericResponse response = GenericResponse.newBuilder()
+                .setOk(true)
+                .setMessage("SQL executed successfully")
+                .build();
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+
+        } catch (SQLException e) {
+            GenericResponse response = GenericResponse.newBuilder()
+                .setOk(false)
+                .setMessage(e.getMessage())
+                .build();
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();
+        }
+}
+
+    
+    
 }

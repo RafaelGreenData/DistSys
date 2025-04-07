@@ -1,7 +1,9 @@
 package com.dbmapp.client;
 
 import com.dbmapp.grpc.DatabaseManagementGrpc;
-import com.dbmapp.grpc.DatabaseManagementServiceImpl.*;
+import com.dbmapp.grpc.DatabaseManagementOuterClass.ConfirmationMessage;
+import com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaRequest;
+import com.dbmapp.grpc.DatabaseManagementOuterClass.SchemaResponse;
 
 import com.google.protobuf.Empty;
 import io.grpc.ManagedChannel;

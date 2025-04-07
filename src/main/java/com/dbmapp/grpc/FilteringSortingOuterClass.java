@@ -3,8 +3,8 @@
 
 package com.dbmapp.grpc;
 
-public final class FilteringSortingServiceImpl {
-  private FilteringSortingServiceImpl() {}
+public final class FilteringSortingOuterClass {
+  private FilteringSortingOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -234,15 +234,15 @@ public final class FilteringSortingServiceImpl {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dbmapp.grpc.FilteringSortingServiceImpl.internal_static_FilterRequest_descriptor;
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilterRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dbmapp.grpc.FilteringSortingServiceImpl.internal_static_FilterRequest_fieldAccessorTable
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilterRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest.class, com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest.Builder.class);
+              com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest.class, com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest.Builder.class);
     }
 
     public static final int SCHEMA_NAME_FIELD_NUMBER = 1;
@@ -566,10 +566,10 @@ public final class FilteringSortingServiceImpl {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest)) {
+      if (!(obj instanceof com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest)) {
         return super.equals(obj);
       }
-      com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest other = (com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest) obj;
+      com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest other = (com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest) obj;
 
       boolean result = true;
       result = result && getSchemaName()
@@ -612,69 +612,69 @@ public final class FilteringSortingServiceImpl {
       return hash;
     }
 
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest parseFrom(byte[] data)
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest parseFrom(java.io.InputStream input)
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest parseDelimitedFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -687,7 +687,7 @@ public final class FilteringSortingServiceImpl {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest prototype) {
+    public static Builder newBuilder(com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -714,21 +714,21 @@ public final class FilteringSortingServiceImpl {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:FilterRequest)
-        com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequestOrBuilder {
+        com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dbmapp.grpc.FilteringSortingServiceImpl.internal_static_FilterRequest_descriptor;
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilterRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dbmapp.grpc.FilteringSortingServiceImpl.internal_static_FilterRequest_fieldAccessorTable
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilterRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest.class, com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest.Builder.class);
+                com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest.class, com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest.Builder.class);
       }
 
-      // Construct using com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest.newBuilder()
+      // Construct using com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -764,17 +764,17 @@ public final class FilteringSortingServiceImpl {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dbmapp.grpc.FilteringSortingServiceImpl.internal_static_FilterRequest_descriptor;
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilterRequest_descriptor;
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest getDefaultInstanceForType() {
-        return com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest.getDefaultInstance();
+      public com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest getDefaultInstanceForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest build() {
-        com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest result = buildPartial();
+      public com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest build() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -782,8 +782,8 @@ public final class FilteringSortingServiceImpl {
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest buildPartial() {
-        com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest result = new com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest(this);
+      public com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest buildPartial() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest result = new com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest(this);
         result.schemaName_ = schemaName_;
         result.tableName_ = tableName_;
         result.column_ = column_;
@@ -828,16 +828,16 @@ public final class FilteringSortingServiceImpl {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest) {
-          return mergeFrom((com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest)other);
+        if (other instanceof com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest) {
+          return mergeFrom((com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest other) {
-        if (other == com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest other) {
+        if (other == com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest.getDefaultInstance()) return this;
         if (!other.getSchemaName().isEmpty()) {
           schemaName_ = other.schemaName_;
           onChanged();
@@ -877,11 +877,11 @@ public final class FilteringSortingServiceImpl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest parsedMessage = null;
+        com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1441,12 +1441,12 @@ public final class FilteringSortingServiceImpl {
     }
 
     // @@protoc_insertion_point(class_scope:FilterRequest)
-    private static final com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest DEFAULT_INSTANCE;
+    private static final com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest();
+      DEFAULT_INSTANCE = new com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest();
     }
 
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest getDefaultInstance() {
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1471,7 +1471,7 @@ public final class FilteringSortingServiceImpl {
     }
 
     @java.lang.Override
-    public com.dbmapp.grpc.FilteringSortingServiceImpl.FilterRequest getDefaultInstanceForType() {
+    public com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1595,15 +1595,15 @@ public final class FilteringSortingServiceImpl {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dbmapp.grpc.FilteringSortingServiceImpl.internal_static_FilteredRow_descriptor;
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilteredRow_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dbmapp.grpc.FilteringSortingServiceImpl.internal_static_FilteredRow_fieldAccessorTable
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilteredRow_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow.class, com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow.Builder.class);
+              com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow.class, com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow.Builder.class);
     }
 
     public static final int VALUES_FIELD_NUMBER = 1;
@@ -1695,10 +1695,10 @@ public final class FilteringSortingServiceImpl {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow)) {
+      if (!(obj instanceof com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow)) {
         return super.equals(obj);
       }
-      com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow other = (com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow) obj;
+      com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow other = (com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow) obj;
 
       boolean result = true;
       result = result && getValuesList()
@@ -1723,69 +1723,69 @@ public final class FilteringSortingServiceImpl {
       return hash;
     }
 
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow parseFrom(byte[] data)
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow parseFrom(java.io.InputStream input)
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow parseDelimitedFrom(java.io.InputStream input)
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow parseDelimitedFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1798,7 +1798,7 @@ public final class FilteringSortingServiceImpl {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow prototype) {
+    public static Builder newBuilder(com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1825,21 +1825,21 @@ public final class FilteringSortingServiceImpl {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:FilteredRow)
-        com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRowOrBuilder {
+        com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRowOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dbmapp.grpc.FilteringSortingServiceImpl.internal_static_FilteredRow_descriptor;
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilteredRow_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dbmapp.grpc.FilteringSortingServiceImpl.internal_static_FilteredRow_fieldAccessorTable
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilteredRow_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow.class, com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow.Builder.class);
+                com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow.class, com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow.Builder.class);
       }
 
-      // Construct using com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow.newBuilder()
+      // Construct using com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1865,17 +1865,17 @@ public final class FilteringSortingServiceImpl {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dbmapp.grpc.FilteringSortingServiceImpl.internal_static_FilteredRow_descriptor;
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilteredRow_descriptor;
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow getDefaultInstanceForType() {
-        return com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow.getDefaultInstance();
+      public com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow getDefaultInstanceForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow build() {
-        com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow result = buildPartial();
+      public com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow build() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1883,8 +1883,8 @@ public final class FilteringSortingServiceImpl {
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow buildPartial() {
-        com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow result = new com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow(this);
+      public com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow buildPartial() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow result = new com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           values_ = values_.getUnmodifiableView();
@@ -1929,16 +1929,16 @@ public final class FilteringSortingServiceImpl {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow) {
-          return mergeFrom((com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow)other);
+        if (other instanceof com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow) {
+          return mergeFrom((com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow other) {
-        if (other == com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow other) {
+        if (other == com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow.getDefaultInstance()) return this;
         if (!other.values_.isEmpty()) {
           if (values_.isEmpty()) {
             values_ = other.values_;
@@ -1964,11 +1964,11 @@ public final class FilteringSortingServiceImpl {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow parsedMessage = null;
+        com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow) e.getUnfinishedMessage();
+          parsedMessage = (com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2125,12 +2125,12 @@ public final class FilteringSortingServiceImpl {
     }
 
     // @@protoc_insertion_point(class_scope:FilteredRow)
-    private static final com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow DEFAULT_INSTANCE;
+    private static final com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow();
+      DEFAULT_INSTANCE = new com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow();
     }
 
-    public static com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow getDefaultInstance() {
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2155,7 +2155,7 @@ public final class FilteringSortingServiceImpl {
     }
 
     @java.lang.Override
-    public com.dbmapp.grpc.FilteringSortingServiceImpl.FilteredRow getDefaultInstanceForType() {
+    public com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2186,8 +2186,8 @@ public final class FilteringSortingServiceImpl {
       "\005value\030\005 \001(\t\022\022\n\nsort_order\030\006 \001(\t\"\035\n\013Filt" +
       "eredRow\022\016\n\006values\030\001 \003(\t2I\n\020FilteringSort" +
       "ing\0225\n\021LiveFilterAndSort\022\016.FilterRequest" +
-      "\032\014.FilteredRow(\0010\001B.\n\017com.dbmapp.grpcB\033F" +
-      "ilteringSortingServiceImplb\006proto3"
+      "\032\014.FilteredRow(\0010\001B\021\n\017com.dbmapp.grpcb\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
