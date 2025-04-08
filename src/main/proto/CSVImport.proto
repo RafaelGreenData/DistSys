@@ -2,36 +2,35 @@ syntax = "proto3";
 
 package com.dbmapp.grpc;
 
+// gRPC service definition for CSV import functionality
 service CSVImport {
-  // Unary RPC to fetch CSV headers
+  // Unary RPC: Fetch headers from a CSV file
   rpc GetCSVHeaders(CSVFileRequest) returns (CSVHeadersResponse);
 
-  // Client streaming RPC to import rows of data
+  // Client-streaming RPC: Send CSV rows to the server
   rpc ImportCSV(stream CSVImportRequest) returns (ConfirmationMessage);
 }
 
-// Request to get headers from a CSV file
+// Request message for retrieving CSV headers
 message CSVFileRequest {
-  string file_path = 1;
+  string file_path = 1; // Full path to the CSV file
 }
 
-// Response containing CSV headers
+// Response message containing CSV column headers
 message CSVHeadersResponse {
-  repeated string headers = 1;
+  repeated string headers = 1; // List of header names
 }
 
-// Streaming message with CSV row data
+// Streaming message containing one row of CSV data
 message CSVImportRequest {
-  string schema_name = 1;
-  string table_name = 2;
-  repeated string values = 3;
-
-  // ✅ Optional field to help track which line is being processed
-  int32 line_number = 4;
+  string schema_name = 1;       // Target schema for the import
+  string table_name = 2;        // Target table for the import
+  repeated string values = 3;   // CSV row values
+  int32 line_number = 4;        // Optional: track line number for error reporting
 }
 
-// Generic confirmation message
+// Generic response message for confirmation
 message ConfirmationMessage {
-  bool ok = 1;
-  string message = 2;
+  bool ok = 1;         // Whether the operation succeeded
+  string message = 2;  // Success or error message
 }

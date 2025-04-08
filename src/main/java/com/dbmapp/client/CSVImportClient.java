@@ -1,95 +1,105 @@
 package com.dbmapp.client;
 
 import com.dbmapp.grpc.CSVImportGrpc;
-import com.dbmapp.grpc.CSVImportGrpc.CSVImportStub;
 import com.dbmapp.grpc.CSVImportOuterClass.CSVImportRequest;
 import com.dbmapp.grpc.CSVImportOuterClass.ConfirmationMessage;
-
 import io.grpc.ManagedChannel;
 import io.grpc.stub.StreamObserver;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
 
-import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
+import java.io.Reader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
+import java.util.stream.Collectors;
 
 /**
- * Client class to handle CSV import using gRPC client-streaming.
+ * Client for importing CSV data into a remote table using gRPC.
  */
 public class CSVImportClient {
-    private final CSVImportStub asyncStub;
+    private final CSVImportGrpc.CSVImportBlockingStub blockingStub;
+    private final CSVImportGrpc.CSVImportStub asyncStub;
     private final TableManagementClient tableClient;
 
     public CSVImportClient(ManagedChannel channel, TableManagementClient tableClient) {
+        this.blockingStub = CSVImportGrpc.newBlockingStub(channel);
         this.asyncStub = CSVImportGrpc.newStub(channel);
         this.tableClient = tableClient;
     }
 
+    /**
+     * Generic CSV import method compatible with any structure
+     */
     public void importCSVAndCreateTable(String schema, String tableName, String filePath) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            String headerLine = reader.readLine();
-            if (headerLine == null || headerLine.trim().isEmpty()) {
-                System.err.println("❌ CSV file is empty or missing header row.");
-                return;
+        try (Reader reader = new FileReader(filePath);
+             CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withFirstRecordAsHeader())) {
+
+            // Sanitize headers for SQL table creation
+            List<String> originalHeaders = csvParser.getHeaderNames();
+            List<String> sqlHeaders = originalHeaders.stream()
+                    .map(h -> h.trim().replaceAll("[^a-zA-Z0-9_]", "_"))
+                    .collect(Collectors.toList());
+
+            // Step 1: Create table
+            String createSQL = "CREATE TABLE IF NOT EXISTS " + schema + "." + tableName + " ("
+                    + sqlHeaders.stream()
+                        .map(h -> "`" + h + "` VARCHAR(255)")
+                        .collect(Collectors.joining(", "))
+                    + ")";
+            try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + schema, "root", "00bob456");
+                 Statement stmt = conn.createStatement()) {
+                stmt.executeUpdate(createSQL);
+                System.out.println("✅ Table created successfully.");
             }
 
-            String[] headers = headerLine.split(",");
-
-            StringBuilder createSQL = new StringBuilder("CREATE TABLE ")
-                    .append(schema).append(".").append(tableName).append(" (");
-
-            for (int i = 0; i < headers.length; i++) {
-                createSQL.append("`").append(headers[i].trim()).append("` VARCHAR(255)");
-                if (i < headers.length - 1) {
-                    createSQL.append(", ");
-                }
-            }
-            createSQL.append(")");
-
-            tableClient.executeSQL(schema, createSQL.toString());
-
+            // Step 2: Send rows to gRPC server
             CountDownLatch latch = new CountDownLatch(1);
-
             StreamObserver<ConfirmationMessage> responseObserver = new StreamObserver<ConfirmationMessage>() {
-                @Override
-                public void onNext(ConfirmationMessage value) {
-                    System.out.println((value.getOk() ? "✅ Success: " : "❌ Error: ") + value.getMessage());
+                @Override public void onNext(ConfirmationMessage msg) {
+                    System.out.println((msg.getOk() ? "✅" : "❌") + " " + msg.getMessage());
                 }
 
-                @Override
-                public void onError(Throwable t) {
+                @Override public void onError(Throwable t) {
                     System.err.println("❌ Stream error: " + t.getMessage());
                     latch.countDown();
                 }
 
-                @Override
-                public void onCompleted() {
-                    System.out.println("📥 CSV import completed.");
+                @Override public void onCompleted() {
+                    System.out.println("✅ CSV import completed.");
                     latch.countDown();
                 }
             };
 
             StreamObserver<CSVImportRequest> requestObserver = asyncStub.importCSV(responseObserver);
+            int line = 1;
 
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] values = line.split(",");
-                CSVImportRequest.Builder request = CSVImportRequest.newBuilder()
+            for (CSVRecord record : csvParser) {
+                // Extract values by index (not sanitized name)
+                List<String> values = originalHeaders.stream()
+                        .map(h -> record.get(h).trim())
+                        .collect(Collectors.toList());
+
+                CSVImportRequest request = CSVImportRequest.newBuilder()
                         .setSchemaName(schema)
-                        .setTableName(tableName);
+                        .setTableName(tableName)
+                        .addAllValues(values)
+                        .setLineNumber(line++)
+                        .build();
 
-                for (String value : values) {
-                    request.addValues(value.trim());
-                }
-
-                requestObserver.onNext(request.build());
+                requestObserver.onNext(request);
             }
 
             requestObserver.onCompleted();
             latch.await();
 
-        } catch (IOException | InterruptedException e) {
-            System.err.println("❌ Failed to import CSV: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("❌ Error importing CSV: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }

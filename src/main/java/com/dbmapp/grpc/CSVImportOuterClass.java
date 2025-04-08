@@ -19,10 +19,18 @@ public final class CSVImportOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Full path to the CSV file
+     * </pre>
+     *
      * <code>string file_path = 1;</code>
      */
     java.lang.String getFilePath();
     /**
+     * <pre>
+     * Full path to the CSV file
+     * </pre>
+     *
      * <code>string file_path = 1;</code>
      */
     com.google.protobuf.ByteString
@@ -30,7 +38,7 @@ public final class CSVImportOuterClass {
   }
   /**
    * <pre>
-   * Request to get headers from a CSV file
+   * Request message for retrieving CSV headers
    * </pre>
    *
    * Protobuf type {@code com.dbmapp.grpc.CSVFileRequest}
@@ -113,6 +121,10 @@ public final class CSVImportOuterClass {
     public static final int FILE_PATH_FIELD_NUMBER = 1;
     private volatile java.lang.Object filePath_;
     /**
+     * <pre>
+     * Full path to the CSV file
+     * </pre>
+     *
      * <code>string file_path = 1;</code>
      */
     public java.lang.String getFilePath() {
@@ -128,6 +140,10 @@ public final class CSVImportOuterClass {
       }
     }
     /**
+     * <pre>
+     * Full path to the CSV file
+     * </pre>
+     *
      * <code>string file_path = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -301,7 +317,7 @@ public final class CSVImportOuterClass {
     }
     /**
      * <pre>
-     * Request to get headers from a CSV file
+     * Request message for retrieving CSV headers
      * </pre>
      *
      * Protobuf type {@code com.dbmapp.grpc.CSVFileRequest}
@@ -453,6 +469,10 @@ public final class CSVImportOuterClass {
 
       private java.lang.Object filePath_ = "";
       /**
+       * <pre>
+       * Full path to the CSV file
+       * </pre>
+       *
        * <code>string file_path = 1;</code>
        */
       public java.lang.String getFilePath() {
@@ -468,6 +488,10 @@ public final class CSVImportOuterClass {
         }
       }
       /**
+       * <pre>
+       * Full path to the CSV file
+       * </pre>
+       *
        * <code>string file_path = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -484,6 +508,10 @@ public final class CSVImportOuterClass {
         }
       }
       /**
+       * <pre>
+       * Full path to the CSV file
+       * </pre>
+       *
        * <code>string file_path = 1;</code>
        */
       public Builder setFilePath(
@@ -497,6 +525,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Full path to the CSV file
+       * </pre>
+       *
        * <code>string file_path = 1;</code>
        */
       public Builder clearFilePath() {
@@ -506,6 +538,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Full path to the CSV file
+       * </pre>
+       *
        * <code>string file_path = 1;</code>
        */
       public Builder setFilePathBytes(
@@ -577,19 +613,35 @@ public final class CSVImportOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * List of header names
+     * </pre>
+     *
      * <code>repeated string headers = 1;</code>
      */
     java.util.List<java.lang.String>
         getHeadersList();
     /**
+     * <pre>
+     * List of header names
+     * </pre>
+     *
      * <code>repeated string headers = 1;</code>
      */
     int getHeadersCount();
     /**
+     * <pre>
+     * List of header names
+     * </pre>
+     *
      * <code>repeated string headers = 1;</code>
      */
     java.lang.String getHeaders(int index);
     /**
+     * <pre>
+     * List of header names
+     * </pre>
+     *
      * <code>repeated string headers = 1;</code>
      */
     com.google.protobuf.ByteString
@@ -597,7 +649,7 @@ public final class CSVImportOuterClass {
   }
   /**
    * <pre>
-   * Response containing CSV headers
+   * Response message containing CSV column headers
    * </pre>
    *
    * Protobuf type {@code com.dbmapp.grpc.CSVHeadersResponse}
@@ -686,6 +738,10 @@ public final class CSVImportOuterClass {
     public static final int HEADERS_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList headers_;
     /**
+     * <pre>
+     * List of header names
+     * </pre>
+     *
      * <code>repeated string headers = 1;</code>
      */
     public com.google.protobuf.ProtocolStringList
@@ -693,18 +749,30 @@ public final class CSVImportOuterClass {
       return headers_;
     }
     /**
+     * <pre>
+     * List of header names
+     * </pre>
+     *
      * <code>repeated string headers = 1;</code>
      */
     public int getHeadersCount() {
       return headers_.size();
     }
     /**
+     * <pre>
+     * List of header names
+     * </pre>
+     *
      * <code>repeated string headers = 1;</code>
      */
     public java.lang.String getHeaders(int index) {
       return headers_.get(index);
     }
     /**
+     * <pre>
+     * List of header names
+     * </pre>
+     *
      * <code>repeated string headers = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -876,7 +944,7 @@ public final class CSVImportOuterClass {
     }
     /**
      * <pre>
-     * Response containing CSV headers
+     * Response message containing CSV column headers
      * </pre>
      *
      * Protobuf type {@code com.dbmapp.grpc.CSVHeadersResponse}
@@ -1046,6 +1114,10 @@ public final class CSVImportOuterClass {
          }
       }
       /**
+       * <pre>
+       * List of header names
+       * </pre>
+       *
        * <code>repeated string headers = 1;</code>
        */
       public com.google.protobuf.ProtocolStringList
@@ -1053,18 +1125,30 @@ public final class CSVImportOuterClass {
         return headers_.getUnmodifiableView();
       }
       /**
+       * <pre>
+       * List of header names
+       * </pre>
+       *
        * <code>repeated string headers = 1;</code>
        */
       public int getHeadersCount() {
         return headers_.size();
       }
       /**
+       * <pre>
+       * List of header names
+       * </pre>
+       *
        * <code>repeated string headers = 1;</code>
        */
       public java.lang.String getHeaders(int index) {
         return headers_.get(index);
       }
       /**
+       * <pre>
+       * List of header names
+       * </pre>
+       *
        * <code>repeated string headers = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -1072,6 +1156,10 @@ public final class CSVImportOuterClass {
         return headers_.getByteString(index);
       }
       /**
+       * <pre>
+       * List of header names
+       * </pre>
+       *
        * <code>repeated string headers = 1;</code>
        */
       public Builder setHeaders(
@@ -1085,6 +1173,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * List of header names
+       * </pre>
+       *
        * <code>repeated string headers = 1;</code>
        */
       public Builder addHeaders(
@@ -1098,6 +1190,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * List of header names
+       * </pre>
+       *
        * <code>repeated string headers = 1;</code>
        */
       public Builder addAllHeaders(
@@ -1109,6 +1205,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * List of header names
+       * </pre>
+       *
        * <code>repeated string headers = 1;</code>
        */
       public Builder clearHeaders() {
@@ -1118,6 +1218,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * List of header names
+       * </pre>
+       *
        * <code>repeated string headers = 1;</code>
        */
       public Builder addHeadersBytes(
@@ -1189,39 +1293,71 @@ public final class CSVImportOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Target schema for the import
+     * </pre>
+     *
      * <code>string schema_name = 1;</code>
      */
     java.lang.String getSchemaName();
     /**
+     * <pre>
+     * Target schema for the import
+     * </pre>
+     *
      * <code>string schema_name = 1;</code>
      */
     com.google.protobuf.ByteString
         getSchemaNameBytes();
 
     /**
+     * <pre>
+     * Target table for the import
+     * </pre>
+     *
      * <code>string table_name = 2;</code>
      */
     java.lang.String getTableName();
     /**
+     * <pre>
+     * Target table for the import
+     * </pre>
+     *
      * <code>string table_name = 2;</code>
      */
     com.google.protobuf.ByteString
         getTableNameBytes();
 
     /**
+     * <pre>
+     * CSV row values
+     * </pre>
+     *
      * <code>repeated string values = 3;</code>
      */
     java.util.List<java.lang.String>
         getValuesList();
     /**
+     * <pre>
+     * CSV row values
+     * </pre>
+     *
      * <code>repeated string values = 3;</code>
      */
     int getValuesCount();
     /**
+     * <pre>
+     * CSV row values
+     * </pre>
+     *
      * <code>repeated string values = 3;</code>
      */
     java.lang.String getValues(int index);
     /**
+     * <pre>
+     * CSV row values
+     * </pre>
+     *
      * <code>repeated string values = 3;</code>
      */
     com.google.protobuf.ByteString
@@ -1229,7 +1365,7 @@ public final class CSVImportOuterClass {
 
     /**
      * <pre>
-     * ✅ Optional field to help track which line is being processed
+     * Optional: track line number for error reporting
      * </pre>
      *
      * <code>int32 line_number = 4;</code>
@@ -1238,7 +1374,7 @@ public final class CSVImportOuterClass {
   }
   /**
    * <pre>
-   * Streaming message with CSV row data
+   * Streaming message containing one row of CSV data
    * </pre>
    *
    * Protobuf type {@code com.dbmapp.grpc.CSVImportRequest}
@@ -1348,6 +1484,10 @@ public final class CSVImportOuterClass {
     public static final int SCHEMA_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object schemaName_;
     /**
+     * <pre>
+     * Target schema for the import
+     * </pre>
+     *
      * <code>string schema_name = 1;</code>
      */
     public java.lang.String getSchemaName() {
@@ -1363,6 +1503,10 @@ public final class CSVImportOuterClass {
       }
     }
     /**
+     * <pre>
+     * Target schema for the import
+     * </pre>
+     *
      * <code>string schema_name = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -1382,6 +1526,10 @@ public final class CSVImportOuterClass {
     public static final int TABLE_NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object tableName_;
     /**
+     * <pre>
+     * Target table for the import
+     * </pre>
+     *
      * <code>string table_name = 2;</code>
      */
     public java.lang.String getTableName() {
@@ -1397,6 +1545,10 @@ public final class CSVImportOuterClass {
       }
     }
     /**
+     * <pre>
+     * Target table for the import
+     * </pre>
+     *
      * <code>string table_name = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -1416,6 +1568,10 @@ public final class CSVImportOuterClass {
     public static final int VALUES_FIELD_NUMBER = 3;
     private com.google.protobuf.LazyStringList values_;
     /**
+     * <pre>
+     * CSV row values
+     * </pre>
+     *
      * <code>repeated string values = 3;</code>
      */
     public com.google.protobuf.ProtocolStringList
@@ -1423,18 +1579,30 @@ public final class CSVImportOuterClass {
       return values_;
     }
     /**
+     * <pre>
+     * CSV row values
+     * </pre>
+     *
      * <code>repeated string values = 3;</code>
      */
     public int getValuesCount() {
       return values_.size();
     }
     /**
+     * <pre>
+     * CSV row values
+     * </pre>
+     *
      * <code>repeated string values = 3;</code>
      */
     public java.lang.String getValues(int index) {
       return values_.get(index);
     }
     /**
+     * <pre>
+     * CSV row values
+     * </pre>
+     *
      * <code>repeated string values = 3;</code>
      */
     public com.google.protobuf.ByteString
@@ -1446,7 +1614,7 @@ public final class CSVImportOuterClass {
     private int lineNumber_;
     /**
      * <pre>
-     * ✅ Optional field to help track which line is being processed
+     * Optional: track line number for error reporting
      * </pre>
      *
      * <code>int32 line_number = 4;</code>
@@ -1650,7 +1818,7 @@ public final class CSVImportOuterClass {
     }
     /**
      * <pre>
-     * Streaming message with CSV row data
+     * Streaming message containing one row of CSV data
      * </pre>
      *
      * Protobuf type {@code com.dbmapp.grpc.CSVImportRequest}
@@ -1836,6 +2004,10 @@ public final class CSVImportOuterClass {
 
       private java.lang.Object schemaName_ = "";
       /**
+       * <pre>
+       * Target schema for the import
+       * </pre>
+       *
        * <code>string schema_name = 1;</code>
        */
       public java.lang.String getSchemaName() {
@@ -1851,6 +2023,10 @@ public final class CSVImportOuterClass {
         }
       }
       /**
+       * <pre>
+       * Target schema for the import
+       * </pre>
+       *
        * <code>string schema_name = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -1867,6 +2043,10 @@ public final class CSVImportOuterClass {
         }
       }
       /**
+       * <pre>
+       * Target schema for the import
+       * </pre>
+       *
        * <code>string schema_name = 1;</code>
        */
       public Builder setSchemaName(
@@ -1880,6 +2060,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Target schema for the import
+       * </pre>
+       *
        * <code>string schema_name = 1;</code>
        */
       public Builder clearSchemaName() {
@@ -1889,6 +2073,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Target schema for the import
+       * </pre>
+       *
        * <code>string schema_name = 1;</code>
        */
       public Builder setSchemaNameBytes(
@@ -1905,6 +2093,10 @@ public final class CSVImportOuterClass {
 
       private java.lang.Object tableName_ = "";
       /**
+       * <pre>
+       * Target table for the import
+       * </pre>
+       *
        * <code>string table_name = 2;</code>
        */
       public java.lang.String getTableName() {
@@ -1920,6 +2112,10 @@ public final class CSVImportOuterClass {
         }
       }
       /**
+       * <pre>
+       * Target table for the import
+       * </pre>
+       *
        * <code>string table_name = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -1936,6 +2132,10 @@ public final class CSVImportOuterClass {
         }
       }
       /**
+       * <pre>
+       * Target table for the import
+       * </pre>
+       *
        * <code>string table_name = 2;</code>
        */
       public Builder setTableName(
@@ -1949,6 +2149,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Target table for the import
+       * </pre>
+       *
        * <code>string table_name = 2;</code>
        */
       public Builder clearTableName() {
@@ -1958,6 +2162,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Target table for the import
+       * </pre>
+       *
        * <code>string table_name = 2;</code>
        */
       public Builder setTableNameBytes(
@@ -1980,6 +2188,10 @@ public final class CSVImportOuterClass {
          }
       }
       /**
+       * <pre>
+       * CSV row values
+       * </pre>
+       *
        * <code>repeated string values = 3;</code>
        */
       public com.google.protobuf.ProtocolStringList
@@ -1987,18 +2199,30 @@ public final class CSVImportOuterClass {
         return values_.getUnmodifiableView();
       }
       /**
+       * <pre>
+       * CSV row values
+       * </pre>
+       *
        * <code>repeated string values = 3;</code>
        */
       public int getValuesCount() {
         return values_.size();
       }
       /**
+       * <pre>
+       * CSV row values
+       * </pre>
+       *
        * <code>repeated string values = 3;</code>
        */
       public java.lang.String getValues(int index) {
         return values_.get(index);
       }
       /**
+       * <pre>
+       * CSV row values
+       * </pre>
+       *
        * <code>repeated string values = 3;</code>
        */
       public com.google.protobuf.ByteString
@@ -2006,6 +2230,10 @@ public final class CSVImportOuterClass {
         return values_.getByteString(index);
       }
       /**
+       * <pre>
+       * CSV row values
+       * </pre>
+       *
        * <code>repeated string values = 3;</code>
        */
       public Builder setValues(
@@ -2019,6 +2247,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * CSV row values
+       * </pre>
+       *
        * <code>repeated string values = 3;</code>
        */
       public Builder addValues(
@@ -2032,6 +2264,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * CSV row values
+       * </pre>
+       *
        * <code>repeated string values = 3;</code>
        */
       public Builder addAllValues(
@@ -2043,6 +2279,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * CSV row values
+       * </pre>
+       *
        * <code>repeated string values = 3;</code>
        */
       public Builder clearValues() {
@@ -2052,6 +2292,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * CSV row values
+       * </pre>
+       *
        * <code>repeated string values = 3;</code>
        */
       public Builder addValuesBytes(
@@ -2069,7 +2313,7 @@ public final class CSVImportOuterClass {
       private int lineNumber_ ;
       /**
        * <pre>
-       * ✅ Optional field to help track which line is being processed
+       * Optional: track line number for error reporting
        * </pre>
        *
        * <code>int32 line_number = 4;</code>
@@ -2079,7 +2323,7 @@ public final class CSVImportOuterClass {
       }
       /**
        * <pre>
-       * ✅ Optional field to help track which line is being processed
+       * Optional: track line number for error reporting
        * </pre>
        *
        * <code>int32 line_number = 4;</code>
@@ -2092,7 +2336,7 @@ public final class CSVImportOuterClass {
       }
       /**
        * <pre>
-       * ✅ Optional field to help track which line is being processed
+       * Optional: track line number for error reporting
        * </pre>
        *
        * <code>int32 line_number = 4;</code>
@@ -2161,15 +2405,27 @@ public final class CSVImportOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Whether the operation succeeded
+     * </pre>
+     *
      * <code>bool ok = 1;</code>
      */
     boolean getOk();
 
     /**
+     * <pre>
+     * Success or error message
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     java.lang.String getMessage();
     /**
+     * <pre>
+     * Success or error message
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     com.google.protobuf.ByteString
@@ -2177,7 +2433,7 @@ public final class CSVImportOuterClass {
   }
   /**
    * <pre>
-   * Generic confirmation message
+   * Generic response message for confirmation
    * </pre>
    *
    * Protobuf type {@code com.dbmapp.grpc.ConfirmationMessage}
@@ -2266,6 +2522,10 @@ public final class CSVImportOuterClass {
     public static final int OK_FIELD_NUMBER = 1;
     private boolean ok_;
     /**
+     * <pre>
+     * Whether the operation succeeded
+     * </pre>
+     *
      * <code>bool ok = 1;</code>
      */
     public boolean getOk() {
@@ -2275,6 +2535,10 @@ public final class CSVImportOuterClass {
     public static final int MESSAGE_FIELD_NUMBER = 2;
     private volatile java.lang.Object message_;
     /**
+     * <pre>
+     * Success or error message
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     public java.lang.String getMessage() {
@@ -2290,6 +2554,10 @@ public final class CSVImportOuterClass {
       }
     }
     /**
+     * <pre>
+     * Success or error message
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -2475,7 +2743,7 @@ public final class CSVImportOuterClass {
     }
     /**
      * <pre>
-     * Generic confirmation message
+     * Generic response message for confirmation
      * </pre>
      *
      * Protobuf type {@code com.dbmapp.grpc.ConfirmationMessage}
@@ -2633,12 +2901,20 @@ public final class CSVImportOuterClass {
 
       private boolean ok_ ;
       /**
+       * <pre>
+       * Whether the operation succeeded
+       * </pre>
+       *
        * <code>bool ok = 1;</code>
        */
       public boolean getOk() {
         return ok_;
       }
       /**
+       * <pre>
+       * Whether the operation succeeded
+       * </pre>
+       *
        * <code>bool ok = 1;</code>
        */
       public Builder setOk(boolean value) {
@@ -2648,6 +2924,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Whether the operation succeeded
+       * </pre>
+       *
        * <code>bool ok = 1;</code>
        */
       public Builder clearOk() {
@@ -2659,6 +2939,10 @@ public final class CSVImportOuterClass {
 
       private java.lang.Object message_ = "";
       /**
+       * <pre>
+       * Success or error message
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public java.lang.String getMessage() {
@@ -2674,6 +2958,10 @@ public final class CSVImportOuterClass {
         }
       }
       /**
+       * <pre>
+       * Success or error message
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -2690,6 +2978,10 @@ public final class CSVImportOuterClass {
         }
       }
       /**
+       * <pre>
+       * Success or error message
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public Builder setMessage(
@@ -2703,6 +2995,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Success or error message
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public Builder clearMessage() {
@@ -2712,6 +3008,10 @@ public final class CSVImportOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Success or error message
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public Builder setMessageBytes(
