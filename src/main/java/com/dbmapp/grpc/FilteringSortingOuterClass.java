@@ -15,129 +15,77 @@ public final class FilteringSortingOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface FilterRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:FilterRequest)
+      // @@protoc_insertion_point(interface_extends:com.dbmapp.grpc.FilterRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * Database schema
-     * </pre>
-     *
-     * <code>string schema_name = 1;</code>
+     * <code>string schemaName = 1;</code>
      */
     java.lang.String getSchemaName();
     /**
-     * <pre>
-     * Database schema
-     * </pre>
-     *
-     * <code>string schema_name = 1;</code>
+     * <code>string schemaName = 1;</code>
      */
     com.google.protobuf.ByteString
         getSchemaNameBytes();
 
     /**
-     * <pre>
-     * Table to query
-     * </pre>
-     *
-     * <code>string table_name = 2;</code>
+     * <code>string tableName = 2;</code>
      */
     java.lang.String getTableName();
     /**
-     * <pre>
-     * Table to query
-     * </pre>
-     *
-     * <code>string table_name = 2;</code>
+     * <code>string tableName = 2;</code>
      */
     com.google.protobuf.ByteString
         getTableNameBytes();
 
     /**
-     * <pre>
-     * Column to apply filter
-     * </pre>
-     *
-     * <code>string column = 3;</code>
+     * <code>string columnName = 3;</code>
      */
-    java.lang.String getColumn();
+    java.lang.String getColumnName();
     /**
-     * <pre>
-     * Column to apply filter
-     * </pre>
-     *
-     * <code>string column = 3;</code>
+     * <code>string columnName = 3;</code>
      */
     com.google.protobuf.ByteString
-        getColumnBytes();
+        getColumnNameBytes();
 
     /**
      * <pre>
-     * Filter operation (=, !=, &gt;, &lt;, &gt;=, &lt;=)
+     * =, !=, &gt;, &lt;, LIKE, etc.
      * </pre>
      *
-     * <code>string operation = 4;</code>
+     * <code>string filterCondition = 4;</code>
      */
-    java.lang.String getOperation();
+    java.lang.String getFilterCondition();
     /**
      * <pre>
-     * Filter operation (=, !=, &gt;, &lt;, &gt;=, &lt;=)
+     * =, !=, &gt;, &lt;, LIKE, etc.
      * </pre>
      *
-     * <code>string operation = 4;</code>
+     * <code>string filterCondition = 4;</code>
      */
     com.google.protobuf.ByteString
-        getOperationBytes();
+        getFilterConditionBytes();
 
     /**
-     * <pre>
-     * Value to compare
-     * </pre>
-     *
      * <code>string value = 5;</code>
      */
     java.lang.String getValue();
     /**
-     * <pre>
-     * Value to compare
-     * </pre>
-     *
      * <code>string value = 5;</code>
      */
     com.google.protobuf.ByteString
         getValueBytes();
-
-    /**
-     * <pre>
-     * Optional: ASC or DESC
-     * </pre>
-     *
-     * <code>string sort_order = 6;</code>
-     */
-    java.lang.String getSortOrder();
-    /**
-     * <pre>
-     * Optional: ASC or DESC
-     * </pre>
-     *
-     * <code>string sort_order = 6;</code>
-     */
-    com.google.protobuf.ByteString
-        getSortOrderBytes();
   }
   /**
    * <pre>
-   * Message: FilterRequest
-   * -----------------------------------------------
-   * Sent by the client to define filtering and sorting criteria.
+   * --- Filter Request ---
    * </pre>
    *
-   * Protobuf type {@code FilterRequest}
+   * Protobuf type {@code com.dbmapp.grpc.FilterRequest}
    */
   public  static final class FilterRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:FilterRequest)
+      // @@protoc_insertion_point(message_implements:com.dbmapp.grpc.FilterRequest)
       FilterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use FilterRequest.newBuilder() to construct.
@@ -147,10 +95,9 @@ public final class FilteringSortingOuterClass {
     private FilterRequest() {
       schemaName_ = "";
       tableName_ = "";
-      column_ = "";
-      operation_ = "";
+      columnName_ = "";
+      filterCondition_ = "";
       value_ = "";
-      sortOrder_ = "";
     }
 
     @java.lang.Override
@@ -192,25 +139,19 @@ public final class FilteringSortingOuterClass {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              column_ = s;
+              columnName_ = s;
               break;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              operation_ = s;
+              filterCondition_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               value_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sortOrder_ = s;
               break;
             }
             default: {
@@ -234,25 +175,21 @@ public final class FilteringSortingOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilterRequest_descriptor;
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_FilterRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilterRequest_fieldAccessorTable
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_FilterRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest.class, com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest.Builder.class);
     }
 
-    public static final int SCHEMA_NAME_FIELD_NUMBER = 1;
+    public static final int SCHEMANAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object schemaName_;
     /**
-     * <pre>
-     * Database schema
-     * </pre>
-     *
-     * <code>string schema_name = 1;</code>
+     * <code>string schemaName = 1;</code>
      */
     public java.lang.String getSchemaName() {
       java.lang.Object ref = schemaName_;
@@ -267,11 +204,7 @@ public final class FilteringSortingOuterClass {
       }
     }
     /**
-     * <pre>
-     * Database schema
-     * </pre>
-     *
-     * <code>string schema_name = 1;</code>
+     * <code>string schemaName = 1;</code>
      */
     public com.google.protobuf.ByteString
         getSchemaNameBytes() {
@@ -287,14 +220,10 @@ public final class FilteringSortingOuterClass {
       }
     }
 
-    public static final int TABLE_NAME_FIELD_NUMBER = 2;
+    public static final int TABLENAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object tableName_;
     /**
-     * <pre>
-     * Table to query
-     * </pre>
-     *
-     * <code>string table_name = 2;</code>
+     * <code>string tableName = 2;</code>
      */
     public java.lang.String getTableName() {
       java.lang.Object ref = tableName_;
@@ -309,11 +238,7 @@ public final class FilteringSortingOuterClass {
       }
     }
     /**
-     * <pre>
-     * Table to query
-     * </pre>
-     *
-     * <code>string table_name = 2;</code>
+     * <code>string tableName = 2;</code>
      */
     public com.google.protobuf.ByteString
         getTableNameBytes() {
@@ -329,84 +254,76 @@ public final class FilteringSortingOuterClass {
       }
     }
 
-    public static final int COLUMN_FIELD_NUMBER = 3;
-    private volatile java.lang.Object column_;
+    public static final int COLUMNNAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object columnName_;
     /**
-     * <pre>
-     * Column to apply filter
-     * </pre>
-     *
-     * <code>string column = 3;</code>
+     * <code>string columnName = 3;</code>
      */
-    public java.lang.String getColumn() {
-      java.lang.Object ref = column_;
+    public java.lang.String getColumnName() {
+      java.lang.Object ref = columnName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        column_ = s;
+        columnName_ = s;
         return s;
       }
     }
     /**
-     * <pre>
-     * Column to apply filter
-     * </pre>
-     *
-     * <code>string column = 3;</code>
+     * <code>string columnName = 3;</code>
      */
     public com.google.protobuf.ByteString
-        getColumnBytes() {
-      java.lang.Object ref = column_;
+        getColumnNameBytes() {
+      java.lang.Object ref = columnName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        column_ = b;
+        columnName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int OPERATION_FIELD_NUMBER = 4;
-    private volatile java.lang.Object operation_;
+    public static final int FILTERCONDITION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object filterCondition_;
     /**
      * <pre>
-     * Filter operation (=, !=, &gt;, &lt;, &gt;=, &lt;=)
+     * =, !=, &gt;, &lt;, LIKE, etc.
      * </pre>
      *
-     * <code>string operation = 4;</code>
+     * <code>string filterCondition = 4;</code>
      */
-    public java.lang.String getOperation() {
-      java.lang.Object ref = operation_;
+    public java.lang.String getFilterCondition() {
+      java.lang.Object ref = filterCondition_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        operation_ = s;
+        filterCondition_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Filter operation (=, !=, &gt;, &lt;, &gt;=, &lt;=)
+     * =, !=, &gt;, &lt;, LIKE, etc.
      * </pre>
      *
-     * <code>string operation = 4;</code>
+     * <code>string filterCondition = 4;</code>
      */
     public com.google.protobuf.ByteString
-        getOperationBytes() {
-      java.lang.Object ref = operation_;
+        getFilterConditionBytes() {
+      java.lang.Object ref = filterCondition_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        operation_ = b;
+        filterCondition_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -416,10 +333,6 @@ public final class FilteringSortingOuterClass {
     public static final int VALUE_FIELD_NUMBER = 5;
     private volatile java.lang.Object value_;
     /**
-     * <pre>
-     * Value to compare
-     * </pre>
-     *
      * <code>string value = 5;</code>
      */
     public java.lang.String getValue() {
@@ -435,10 +348,6 @@ public final class FilteringSortingOuterClass {
       }
     }
     /**
-     * <pre>
-     * Value to compare
-     * </pre>
-     *
      * <code>string value = 5;</code>
      */
     public com.google.protobuf.ByteString
@@ -449,48 +358,6 @@ public final class FilteringSortingOuterClass {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         value_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SORT_ORDER_FIELD_NUMBER = 6;
-    private volatile java.lang.Object sortOrder_;
-    /**
-     * <pre>
-     * Optional: ASC or DESC
-     * </pre>
-     *
-     * <code>string sort_order = 6;</code>
-     */
-    public java.lang.String getSortOrder() {
-      java.lang.Object ref = sortOrder_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        sortOrder_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Optional: ASC or DESC
-     * </pre>
-     *
-     * <code>string sort_order = 6;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSortOrderBytes() {
-      java.lang.Object ref = sortOrder_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        sortOrder_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -517,17 +384,14 @@ public final class FilteringSortingOuterClass {
       if (!getTableNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableName_);
       }
-      if (!getColumnBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, column_);
+      if (!getColumnNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, columnName_);
       }
-      if (!getOperationBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, operation_);
+      if (!getFilterConditionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filterCondition_);
       }
       if (!getValueBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, value_);
-      }
-      if (!getSortOrderBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, sortOrder_);
       }
       unknownFields.writeTo(output);
     }
@@ -544,17 +408,14 @@ public final class FilteringSortingOuterClass {
       if (!getTableNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableName_);
       }
-      if (!getColumnBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, column_);
+      if (!getColumnNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, columnName_);
       }
-      if (!getOperationBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, operation_);
+      if (!getFilterConditionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filterCondition_);
       }
       if (!getValueBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, value_);
-      }
-      if (!getSortOrderBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, sortOrder_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -576,14 +437,12 @@ public final class FilteringSortingOuterClass {
           .equals(other.getSchemaName());
       result = result && getTableName()
           .equals(other.getTableName());
-      result = result && getColumn()
-          .equals(other.getColumn());
-      result = result && getOperation()
-          .equals(other.getOperation());
+      result = result && getColumnName()
+          .equals(other.getColumnName());
+      result = result && getFilterCondition()
+          .equals(other.getFilterCondition());
       result = result && getValue()
           .equals(other.getValue());
-      result = result && getSortOrder()
-          .equals(other.getSortOrder());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -595,18 +454,16 @@ public final class FilteringSortingOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SCHEMA_NAME_FIELD_NUMBER;
+      hash = (37 * hash) + SCHEMANAME_FIELD_NUMBER;
       hash = (53 * hash) + getSchemaName().hashCode();
-      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
+      hash = (37 * hash) + TABLENAME_FIELD_NUMBER;
       hash = (53 * hash) + getTableName().hashCode();
-      hash = (37 * hash) + COLUMN_FIELD_NUMBER;
-      hash = (53 * hash) + getColumn().hashCode();
-      hash = (37 * hash) + OPERATION_FIELD_NUMBER;
-      hash = (53 * hash) + getOperation().hashCode();
+      hash = (37 * hash) + COLUMNNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getColumnName().hashCode();
+      hash = (37 * hash) + FILTERCONDITION_FIELD_NUMBER;
+      hash = (53 * hash) + getFilterCondition().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getValue().hashCode();
-      hash = (37 * hash) + SORT_ORDER_FIELD_NUMBER;
-      hash = (53 * hash) + getSortOrder().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -704,26 +561,24 @@ public final class FilteringSortingOuterClass {
     }
     /**
      * <pre>
-     * Message: FilterRequest
-     * -----------------------------------------------
-     * Sent by the client to define filtering and sorting criteria.
+     * --- Filter Request ---
      * </pre>
      *
-     * Protobuf type {@code FilterRequest}
+     * Protobuf type {@code com.dbmapp.grpc.FilterRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:FilterRequest)
+        // @@protoc_insertion_point(builder_implements:com.dbmapp.grpc.FilterRequest)
         com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilterRequest_descriptor;
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_FilterRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilterRequest_fieldAccessorTable
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_FilterRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest.class, com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest.Builder.class);
       }
@@ -750,13 +605,11 @@ public final class FilteringSortingOuterClass {
 
         tableName_ = "";
 
-        column_ = "";
+        columnName_ = "";
 
-        operation_ = "";
+        filterCondition_ = "";
 
         value_ = "";
-
-        sortOrder_ = "";
 
         return this;
       }
@@ -764,7 +617,7 @@ public final class FilteringSortingOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilterRequest_descriptor;
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_FilterRequest_descriptor;
       }
 
       @java.lang.Override
@@ -786,10 +639,9 @@ public final class FilteringSortingOuterClass {
         com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest result = new com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest(this);
         result.schemaName_ = schemaName_;
         result.tableName_ = tableName_;
-        result.column_ = column_;
-        result.operation_ = operation_;
+        result.columnName_ = columnName_;
+        result.filterCondition_ = filterCondition_;
         result.value_ = value_;
-        result.sortOrder_ = sortOrder_;
         onBuilt();
         return result;
       }
@@ -846,20 +698,16 @@ public final class FilteringSortingOuterClass {
           tableName_ = other.tableName_;
           onChanged();
         }
-        if (!other.getColumn().isEmpty()) {
-          column_ = other.column_;
+        if (!other.getColumnName().isEmpty()) {
+          columnName_ = other.columnName_;
           onChanged();
         }
-        if (!other.getOperation().isEmpty()) {
-          operation_ = other.operation_;
+        if (!other.getFilterCondition().isEmpty()) {
+          filterCondition_ = other.filterCondition_;
           onChanged();
         }
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
-          onChanged();
-        }
-        if (!other.getSortOrder().isEmpty()) {
-          sortOrder_ = other.sortOrder_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -893,11 +741,7 @@ public final class FilteringSortingOuterClass {
 
       private java.lang.Object schemaName_ = "";
       /**
-       * <pre>
-       * Database schema
-       * </pre>
-       *
-       * <code>string schema_name = 1;</code>
+       * <code>string schemaName = 1;</code>
        */
       public java.lang.String getSchemaName() {
         java.lang.Object ref = schemaName_;
@@ -912,11 +756,7 @@ public final class FilteringSortingOuterClass {
         }
       }
       /**
-       * <pre>
-       * Database schema
-       * </pre>
-       *
-       * <code>string schema_name = 1;</code>
+       * <code>string schemaName = 1;</code>
        */
       public com.google.protobuf.ByteString
           getSchemaNameBytes() {
@@ -932,11 +772,7 @@ public final class FilteringSortingOuterClass {
         }
       }
       /**
-       * <pre>
-       * Database schema
-       * </pre>
-       *
-       * <code>string schema_name = 1;</code>
+       * <code>string schemaName = 1;</code>
        */
       public Builder setSchemaName(
           java.lang.String value) {
@@ -949,11 +785,7 @@ public final class FilteringSortingOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * Database schema
-       * </pre>
-       *
-       * <code>string schema_name = 1;</code>
+       * <code>string schemaName = 1;</code>
        */
       public Builder clearSchemaName() {
         
@@ -962,11 +794,7 @@ public final class FilteringSortingOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * Database schema
-       * </pre>
-       *
-       * <code>string schema_name = 1;</code>
+       * <code>string schemaName = 1;</code>
        */
       public Builder setSchemaNameBytes(
           com.google.protobuf.ByteString value) {
@@ -982,11 +810,7 @@ public final class FilteringSortingOuterClass {
 
       private java.lang.Object tableName_ = "";
       /**
-       * <pre>
-       * Table to query
-       * </pre>
-       *
-       * <code>string table_name = 2;</code>
+       * <code>string tableName = 2;</code>
        */
       public java.lang.String getTableName() {
         java.lang.Object ref = tableName_;
@@ -1001,11 +825,7 @@ public final class FilteringSortingOuterClass {
         }
       }
       /**
-       * <pre>
-       * Table to query
-       * </pre>
-       *
-       * <code>string table_name = 2;</code>
+       * <code>string tableName = 2;</code>
        */
       public com.google.protobuf.ByteString
           getTableNameBytes() {
@@ -1021,11 +841,7 @@ public final class FilteringSortingOuterClass {
         }
       }
       /**
-       * <pre>
-       * Table to query
-       * </pre>
-       *
-       * <code>string table_name = 2;</code>
+       * <code>string tableName = 2;</code>
        */
       public Builder setTableName(
           java.lang.String value) {
@@ -1038,11 +854,7 @@ public final class FilteringSortingOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * Table to query
-       * </pre>
-       *
-       * <code>string table_name = 2;</code>
+       * <code>string tableName = 2;</code>
        */
       public Builder clearTableName() {
         
@@ -1051,11 +863,7 @@ public final class FilteringSortingOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * Table to query
-       * </pre>
-       *
-       * <code>string table_name = 2;</code>
+       * <code>string tableName = 2;</code>
        */
       public Builder setTableNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1069,110 +877,90 @@ public final class FilteringSortingOuterClass {
         return this;
       }
 
-      private java.lang.Object column_ = "";
+      private java.lang.Object columnName_ = "";
       /**
-       * <pre>
-       * Column to apply filter
-       * </pre>
-       *
-       * <code>string column = 3;</code>
+       * <code>string columnName = 3;</code>
        */
-      public java.lang.String getColumn() {
-        java.lang.Object ref = column_;
+      public java.lang.String getColumnName() {
+        java.lang.Object ref = columnName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          column_ = s;
+          columnName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <pre>
-       * Column to apply filter
-       * </pre>
-       *
-       * <code>string column = 3;</code>
+       * <code>string columnName = 3;</code>
        */
       public com.google.protobuf.ByteString
-          getColumnBytes() {
-        java.lang.Object ref = column_;
+          getColumnNameBytes() {
+        java.lang.Object ref = columnName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          column_ = b;
+          columnName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <pre>
-       * Column to apply filter
-       * </pre>
-       *
-       * <code>string column = 3;</code>
+       * <code>string columnName = 3;</code>
        */
-      public Builder setColumn(
+      public Builder setColumnName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        column_ = value;
+        columnName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * Column to apply filter
-       * </pre>
-       *
-       * <code>string column = 3;</code>
+       * <code>string columnName = 3;</code>
        */
-      public Builder clearColumn() {
+      public Builder clearColumnName() {
         
-        column_ = getDefaultInstance().getColumn();
+        columnName_ = getDefaultInstance().getColumnName();
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * Column to apply filter
-       * </pre>
-       *
-       * <code>string column = 3;</code>
+       * <code>string columnName = 3;</code>
        */
-      public Builder setColumnBytes(
+      public Builder setColumnNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        column_ = value;
+        columnName_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object operation_ = "";
+      private java.lang.Object filterCondition_ = "";
       /**
        * <pre>
-       * Filter operation (=, !=, &gt;, &lt;, &gt;=, &lt;=)
+       * =, !=, &gt;, &lt;, LIKE, etc.
        * </pre>
        *
-       * <code>string operation = 4;</code>
+       * <code>string filterCondition = 4;</code>
        */
-      public java.lang.String getOperation() {
-        java.lang.Object ref = operation_;
+      public java.lang.String getFilterCondition() {
+        java.lang.Object ref = filterCondition_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          operation_ = s;
+          filterCondition_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1180,19 +968,19 @@ public final class FilteringSortingOuterClass {
       }
       /**
        * <pre>
-       * Filter operation (=, !=, &gt;, &lt;, &gt;=, &lt;=)
+       * =, !=, &gt;, &lt;, LIKE, etc.
        * </pre>
        *
-       * <code>string operation = 4;</code>
+       * <code>string filterCondition = 4;</code>
        */
       public com.google.protobuf.ByteString
-          getOperationBytes() {
-        java.lang.Object ref = operation_;
+          getFilterConditionBytes() {
+        java.lang.Object ref = filterCondition_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          operation_ = b;
+          filterCondition_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1200,59 +988,55 @@ public final class FilteringSortingOuterClass {
       }
       /**
        * <pre>
-       * Filter operation (=, !=, &gt;, &lt;, &gt;=, &lt;=)
+       * =, !=, &gt;, &lt;, LIKE, etc.
        * </pre>
        *
-       * <code>string operation = 4;</code>
+       * <code>string filterCondition = 4;</code>
        */
-      public Builder setOperation(
+      public Builder setFilterCondition(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        operation_ = value;
+        filterCondition_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Filter operation (=, !=, &gt;, &lt;, &gt;=, &lt;=)
+       * =, !=, &gt;, &lt;, LIKE, etc.
        * </pre>
        *
-       * <code>string operation = 4;</code>
+       * <code>string filterCondition = 4;</code>
        */
-      public Builder clearOperation() {
+      public Builder clearFilterCondition() {
         
-        operation_ = getDefaultInstance().getOperation();
+        filterCondition_ = getDefaultInstance().getFilterCondition();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Filter operation (=, !=, &gt;, &lt;, &gt;=, &lt;=)
+       * =, !=, &gt;, &lt;, LIKE, etc.
        * </pre>
        *
-       * <code>string operation = 4;</code>
+       * <code>string filterCondition = 4;</code>
        */
-      public Builder setOperationBytes(
+      public Builder setFilterConditionBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        operation_ = value;
+        filterCondition_ = value;
         onChanged();
         return this;
       }
 
       private java.lang.Object value_ = "";
       /**
-       * <pre>
-       * Value to compare
-       * </pre>
-       *
        * <code>string value = 5;</code>
        */
       public java.lang.String getValue() {
@@ -1268,10 +1052,6 @@ public final class FilteringSortingOuterClass {
         }
       }
       /**
-       * <pre>
-       * Value to compare
-       * </pre>
-       *
        * <code>string value = 5;</code>
        */
       public com.google.protobuf.ByteString
@@ -1288,10 +1068,6 @@ public final class FilteringSortingOuterClass {
         }
       }
       /**
-       * <pre>
-       * Value to compare
-       * </pre>
-       *
        * <code>string value = 5;</code>
        */
       public Builder setValue(
@@ -1305,10 +1081,6 @@ public final class FilteringSortingOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * Value to compare
-       * </pre>
-       *
        * <code>string value = 5;</code>
        */
       public Builder clearValue() {
@@ -1318,10 +1090,6 @@ public final class FilteringSortingOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * Value to compare
-       * </pre>
-       *
        * <code>string value = 5;</code>
        */
       public Builder setValueBytes(
@@ -1332,95 +1100,6 @@ public final class FilteringSortingOuterClass {
   checkByteStringIsUtf8(value);
         
         value_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object sortOrder_ = "";
-      /**
-       * <pre>
-       * Optional: ASC or DESC
-       * </pre>
-       *
-       * <code>string sort_order = 6;</code>
-       */
-      public java.lang.String getSortOrder() {
-        java.lang.Object ref = sortOrder_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          sortOrder_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional: ASC or DESC
-       * </pre>
-       *
-       * <code>string sort_order = 6;</code>
-       */
-      public com.google.protobuf.ByteString
-          getSortOrderBytes() {
-        java.lang.Object ref = sortOrder_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          sortOrder_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional: ASC or DESC
-       * </pre>
-       *
-       * <code>string sort_order = 6;</code>
-       */
-      public Builder setSortOrder(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        sortOrder_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional: ASC or DESC
-       * </pre>
-       *
-       * <code>string sort_order = 6;</code>
-       */
-      public Builder clearSortOrder() {
-        
-        sortOrder_ = getDefaultInstance().getSortOrder();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional: ASC or DESC
-       * </pre>
-       *
-       * <code>string sort_order = 6;</code>
-       */
-      public Builder setSortOrderBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        sortOrder_ = value;
         onChanged();
         return this;
       }
@@ -1437,10 +1116,10 @@ public final class FilteringSortingOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:FilterRequest)
+      // @@protoc_insertion_point(builder_scope:com.dbmapp.grpc.FilterRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:FilterRequest)
+    // @@protoc_insertion_point(class_scope:com.dbmapp.grpc.FilterRequest)
     private static final com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest();
@@ -1477,64 +1156,5026 @@ public final class FilteringSortingOuterClass {
 
   }
 
-  public interface FilteredRowOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:FilteredRow)
+  public interface FilterResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.dbmapp.grpc.FilterResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+     */
+    java.util.List<com.dbmapp.grpc.FilteringSortingOuterClass.RowData> 
+        getFilteredRowsList();
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+     */
+    com.dbmapp.grpc.FilteringSortingOuterClass.RowData getFilteredRows(int index);
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+     */
+    int getFilteredRowsCount();
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+     */
+    java.util.List<? extends com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder> 
+        getFilteredRowsOrBuilderList();
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+     */
+    com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder getFilteredRowsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code com.dbmapp.grpc.FilterResponse}
+   */
+  public  static final class FilterResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.dbmapp.grpc.FilterResponse)
+      FilterResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FilterResponse.newBuilder() to construct.
+    private FilterResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FilterResponse() {
+      filteredRows_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FilterResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                filteredRows_ = new java.util.ArrayList<com.dbmapp.grpc.FilteringSortingOuterClass.RowData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              filteredRows_.add(
+                  input.readMessage(com.dbmapp.grpc.FilteringSortingOuterClass.RowData.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          filteredRows_ = java.util.Collections.unmodifiableList(filteredRows_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_FilterResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_FilterResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse.class, com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse.Builder.class);
+    }
+
+    public static final int FILTEREDROWS_FIELD_NUMBER = 1;
+    private java.util.List<com.dbmapp.grpc.FilteringSortingOuterClass.RowData> filteredRows_;
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+     */
+    public java.util.List<com.dbmapp.grpc.FilteringSortingOuterClass.RowData> getFilteredRowsList() {
+      return filteredRows_;
+    }
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+     */
+    public java.util.List<? extends com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder> 
+        getFilteredRowsOrBuilderList() {
+      return filteredRows_;
+    }
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+     */
+    public int getFilteredRowsCount() {
+      return filteredRows_.size();
+    }
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+     */
+    public com.dbmapp.grpc.FilteringSortingOuterClass.RowData getFilteredRows(int index) {
+      return filteredRows_.get(index);
+    }
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+     */
+    public com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder getFilteredRowsOrBuilder(
+        int index) {
+      return filteredRows_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < filteredRows_.size(); i++) {
+        output.writeMessage(1, filteredRows_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < filteredRows_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, filteredRows_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse)) {
+        return super.equals(obj);
+      }
+      com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse other = (com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse) obj;
+
+      boolean result = true;
+      result = result && getFilteredRowsList()
+          .equals(other.getFilteredRowsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getFilteredRowsCount() > 0) {
+        hash = (37 * hash) + FILTEREDROWS_FIELD_NUMBER;
+        hash = (53 * hash) + getFilteredRowsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.dbmapp.grpc.FilterResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.dbmapp.grpc.FilterResponse)
+        com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_FilterResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_FilterResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse.class, com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse.Builder.class);
+      }
+
+      // Construct using com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getFilteredRowsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (filteredRowsBuilder_ == null) {
+          filteredRows_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          filteredRowsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_FilterResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse getDefaultInstanceForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse build() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse buildPartial() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse result = new com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (filteredRowsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            filteredRows_ = java.util.Collections.unmodifiableList(filteredRows_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.filteredRows_ = filteredRows_;
+        } else {
+          result.filteredRows_ = filteredRowsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse) {
+          return mergeFrom((com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse other) {
+        if (other == com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse.getDefaultInstance()) return this;
+        if (filteredRowsBuilder_ == null) {
+          if (!other.filteredRows_.isEmpty()) {
+            if (filteredRows_.isEmpty()) {
+              filteredRows_ = other.filteredRows_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureFilteredRowsIsMutable();
+              filteredRows_.addAll(other.filteredRows_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.filteredRows_.isEmpty()) {
+            if (filteredRowsBuilder_.isEmpty()) {
+              filteredRowsBuilder_.dispose();
+              filteredRowsBuilder_ = null;
+              filteredRows_ = other.filteredRows_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              filteredRowsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getFilteredRowsFieldBuilder() : null;
+            } else {
+              filteredRowsBuilder_.addAllMessages(other.filteredRows_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.dbmapp.grpc.FilteringSortingOuterClass.RowData> filteredRows_ =
+        java.util.Collections.emptyList();
+      private void ensureFilteredRowsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          filteredRows_ = new java.util.ArrayList<com.dbmapp.grpc.FilteringSortingOuterClass.RowData>(filteredRows_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dbmapp.grpc.FilteringSortingOuterClass.RowData, com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder, com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder> filteredRowsBuilder_;
+
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public java.util.List<com.dbmapp.grpc.FilteringSortingOuterClass.RowData> getFilteredRowsList() {
+        if (filteredRowsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(filteredRows_);
+        } else {
+          return filteredRowsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public int getFilteredRowsCount() {
+        if (filteredRowsBuilder_ == null) {
+          return filteredRows_.size();
+        } else {
+          return filteredRowsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public com.dbmapp.grpc.FilteringSortingOuterClass.RowData getFilteredRows(int index) {
+        if (filteredRowsBuilder_ == null) {
+          return filteredRows_.get(index);
+        } else {
+          return filteredRowsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public Builder setFilteredRows(
+          int index, com.dbmapp.grpc.FilteringSortingOuterClass.RowData value) {
+        if (filteredRowsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFilteredRowsIsMutable();
+          filteredRows_.set(index, value);
+          onChanged();
+        } else {
+          filteredRowsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public Builder setFilteredRows(
+          int index, com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder builderForValue) {
+        if (filteredRowsBuilder_ == null) {
+          ensureFilteredRowsIsMutable();
+          filteredRows_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          filteredRowsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public Builder addFilteredRows(com.dbmapp.grpc.FilteringSortingOuterClass.RowData value) {
+        if (filteredRowsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFilteredRowsIsMutable();
+          filteredRows_.add(value);
+          onChanged();
+        } else {
+          filteredRowsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public Builder addFilteredRows(
+          int index, com.dbmapp.grpc.FilteringSortingOuterClass.RowData value) {
+        if (filteredRowsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFilteredRowsIsMutable();
+          filteredRows_.add(index, value);
+          onChanged();
+        } else {
+          filteredRowsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public Builder addFilteredRows(
+          com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder builderForValue) {
+        if (filteredRowsBuilder_ == null) {
+          ensureFilteredRowsIsMutable();
+          filteredRows_.add(builderForValue.build());
+          onChanged();
+        } else {
+          filteredRowsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public Builder addFilteredRows(
+          int index, com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder builderForValue) {
+        if (filteredRowsBuilder_ == null) {
+          ensureFilteredRowsIsMutable();
+          filteredRows_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          filteredRowsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public Builder addAllFilteredRows(
+          java.lang.Iterable<? extends com.dbmapp.grpc.FilteringSortingOuterClass.RowData> values) {
+        if (filteredRowsBuilder_ == null) {
+          ensureFilteredRowsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, filteredRows_);
+          onChanged();
+        } else {
+          filteredRowsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public Builder clearFilteredRows() {
+        if (filteredRowsBuilder_ == null) {
+          filteredRows_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          filteredRowsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public Builder removeFilteredRows(int index) {
+        if (filteredRowsBuilder_ == null) {
+          ensureFilteredRowsIsMutable();
+          filteredRows_.remove(index);
+          onChanged();
+        } else {
+          filteredRowsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder getFilteredRowsBuilder(
+          int index) {
+        return getFilteredRowsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder getFilteredRowsOrBuilder(
+          int index) {
+        if (filteredRowsBuilder_ == null) {
+          return filteredRows_.get(index);  } else {
+          return filteredRowsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public java.util.List<? extends com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder> 
+           getFilteredRowsOrBuilderList() {
+        if (filteredRowsBuilder_ != null) {
+          return filteredRowsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(filteredRows_);
+        }
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder addFilteredRowsBuilder() {
+        return getFilteredRowsFieldBuilder().addBuilder(
+            com.dbmapp.grpc.FilteringSortingOuterClass.RowData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder addFilteredRowsBuilder(
+          int index) {
+        return getFilteredRowsFieldBuilder().addBuilder(
+            index, com.dbmapp.grpc.FilteringSortingOuterClass.RowData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData filteredRows = 1;</code>
+       */
+      public java.util.List<com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder> 
+           getFilteredRowsBuilderList() {
+        return getFilteredRowsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dbmapp.grpc.FilteringSortingOuterClass.RowData, com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder, com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder> 
+          getFilteredRowsFieldBuilder() {
+        if (filteredRowsBuilder_ == null) {
+          filteredRowsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dbmapp.grpc.FilteringSortingOuterClass.RowData, com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder, com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder>(
+                  filteredRows_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          filteredRows_ = null;
+        }
+        return filteredRowsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.dbmapp.grpc.FilterResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.dbmapp.grpc.FilterResponse)
+    private static final com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse();
+    }
+
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FilterResponse>
+        PARSER = new com.google.protobuf.AbstractParser<FilterResponse>() {
+      @java.lang.Override
+      public FilterResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FilterResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FilterResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FilterResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dbmapp.grpc.FilteringSortingOuterClass.FilterResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SortRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.dbmapp.grpc.SortRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string schemaName = 1;</code>
+     */
+    java.lang.String getSchemaName();
+    /**
+     * <code>string schemaName = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getSchemaNameBytes();
+
+    /**
+     * <code>string tableName = 2;</code>
+     */
+    java.lang.String getTableName();
+    /**
+     * <code>string tableName = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTableNameBytes();
+
+    /**
+     * <code>string columnName = 3;</code>
+     */
+    java.lang.String getColumnName();
+    /**
+     * <code>string columnName = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getColumnNameBytes();
+
+    /**
      * <pre>
-     * The entire row returned from the query
+     * ASC or DESC
      * </pre>
      *
+     * <code>string sortOrder = 4;</code>
+     */
+    java.lang.String getSortOrder();
+    /**
+     * <pre>
+     * ASC or DESC
+     * </pre>
+     *
+     * <code>string sortOrder = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getSortOrderBytes();
+  }
+  /**
+   * <pre>
+   * --- Sort Request ---
+   * </pre>
+   *
+   * Protobuf type {@code com.dbmapp.grpc.SortRequest}
+   */
+  public  static final class SortRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.dbmapp.grpc.SortRequest)
+      SortRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SortRequest.newBuilder() to construct.
+    private SortRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SortRequest() {
+      schemaName_ = "";
+      tableName_ = "";
+      columnName_ = "";
+      sortOrder_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SortRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              schemaName_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tableName_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              columnName_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sortOrder_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_SortRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_SortRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest.class, com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest.Builder.class);
+    }
+
+    public static final int SCHEMANAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object schemaName_;
+    /**
+     * <code>string schemaName = 1;</code>
+     */
+    public java.lang.String getSchemaName() {
+      java.lang.Object ref = schemaName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        schemaName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string schemaName = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSchemaNameBytes() {
+      java.lang.Object ref = schemaName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        schemaName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TABLENAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object tableName_;
+    /**
+     * <code>string tableName = 2;</code>
+     */
+    public java.lang.String getTableName() {
+      java.lang.Object ref = tableName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tableName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string tableName = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTableNameBytes() {
+      java.lang.Object ref = tableName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tableName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COLUMNNAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object columnName_;
+    /**
+     * <code>string columnName = 3;</code>
+     */
+    public java.lang.String getColumnName() {
+      java.lang.Object ref = columnName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        columnName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string columnName = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getColumnNameBytes() {
+      java.lang.Object ref = columnName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        columnName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SORTORDER_FIELD_NUMBER = 4;
+    private volatile java.lang.Object sortOrder_;
+    /**
+     * <pre>
+     * ASC or DESC
+     * </pre>
+     *
+     * <code>string sortOrder = 4;</code>
+     */
+    public java.lang.String getSortOrder() {
+      java.lang.Object ref = sortOrder_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sortOrder_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * ASC or DESC
+     * </pre>
+     *
+     * <code>string sortOrder = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSortOrderBytes() {
+      java.lang.Object ref = sortOrder_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sortOrder_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getSchemaNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, schemaName_);
+      }
+      if (!getTableNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableName_);
+      }
+      if (!getColumnNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, columnName_);
+      }
+      if (!getSortOrderBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sortOrder_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getSchemaNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, schemaName_);
+      }
+      if (!getTableNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableName_);
+      }
+      if (!getColumnNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, columnName_);
+      }
+      if (!getSortOrderBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sortOrder_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest)) {
+        return super.equals(obj);
+      }
+      com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest other = (com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest) obj;
+
+      boolean result = true;
+      result = result && getSchemaName()
+          .equals(other.getSchemaName());
+      result = result && getTableName()
+          .equals(other.getTableName());
+      result = result && getColumnName()
+          .equals(other.getColumnName());
+      result = result && getSortOrder()
+          .equals(other.getSortOrder());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SCHEMANAME_FIELD_NUMBER;
+      hash = (53 * hash) + getSchemaName().hashCode();
+      hash = (37 * hash) + TABLENAME_FIELD_NUMBER;
+      hash = (53 * hash) + getTableName().hashCode();
+      hash = (37 * hash) + COLUMNNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getColumnName().hashCode();
+      hash = (37 * hash) + SORTORDER_FIELD_NUMBER;
+      hash = (53 * hash) + getSortOrder().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * --- Sort Request ---
+     * </pre>
+     *
+     * Protobuf type {@code com.dbmapp.grpc.SortRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.dbmapp.grpc.SortRequest)
+        com.dbmapp.grpc.FilteringSortingOuterClass.SortRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_SortRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_SortRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest.class, com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest.Builder.class);
+      }
+
+      // Construct using com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        schemaName_ = "";
+
+        tableName_ = "";
+
+        columnName_ = "";
+
+        sortOrder_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_SortRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest getDefaultInstanceForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest build() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest buildPartial() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest result = new com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest(this);
+        result.schemaName_ = schemaName_;
+        result.tableName_ = tableName_;
+        result.columnName_ = columnName_;
+        result.sortOrder_ = sortOrder_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest) {
+          return mergeFrom((com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest other) {
+        if (other == com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest.getDefaultInstance()) return this;
+        if (!other.getSchemaName().isEmpty()) {
+          schemaName_ = other.schemaName_;
+          onChanged();
+        }
+        if (!other.getTableName().isEmpty()) {
+          tableName_ = other.tableName_;
+          onChanged();
+        }
+        if (!other.getColumnName().isEmpty()) {
+          columnName_ = other.columnName_;
+          onChanged();
+        }
+        if (!other.getSortOrder().isEmpty()) {
+          sortOrder_ = other.sortOrder_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object schemaName_ = "";
+      /**
+       * <code>string schemaName = 1;</code>
+       */
+      public java.lang.String getSchemaName() {
+        java.lang.Object ref = schemaName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          schemaName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string schemaName = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSchemaNameBytes() {
+        java.lang.Object ref = schemaName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          schemaName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string schemaName = 1;</code>
+       */
+      public Builder setSchemaName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        schemaName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string schemaName = 1;</code>
+       */
+      public Builder clearSchemaName() {
+        
+        schemaName_ = getDefaultInstance().getSchemaName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string schemaName = 1;</code>
+       */
+      public Builder setSchemaNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        schemaName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tableName_ = "";
+      /**
+       * <code>string tableName = 2;</code>
+       */
+      public java.lang.String getTableName() {
+        java.lang.Object ref = tableName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tableName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string tableName = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTableNameBytes() {
+        java.lang.Object ref = tableName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tableName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string tableName = 2;</code>
+       */
+      public Builder setTableName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tableName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string tableName = 2;</code>
+       */
+      public Builder clearTableName() {
+        
+        tableName_ = getDefaultInstance().getTableName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string tableName = 2;</code>
+       */
+      public Builder setTableNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tableName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object columnName_ = "";
+      /**
+       * <code>string columnName = 3;</code>
+       */
+      public java.lang.String getColumnName() {
+        java.lang.Object ref = columnName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          columnName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string columnName = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getColumnNameBytes() {
+        java.lang.Object ref = columnName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          columnName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string columnName = 3;</code>
+       */
+      public Builder setColumnName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        columnName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string columnName = 3;</code>
+       */
+      public Builder clearColumnName() {
+        
+        columnName_ = getDefaultInstance().getColumnName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string columnName = 3;</code>
+       */
+      public Builder setColumnNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        columnName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sortOrder_ = "";
+      /**
+       * <pre>
+       * ASC or DESC
+       * </pre>
+       *
+       * <code>string sortOrder = 4;</code>
+       */
+      public java.lang.String getSortOrder() {
+        java.lang.Object ref = sortOrder_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sortOrder_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ASC or DESC
+       * </pre>
+       *
+       * <code>string sortOrder = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSortOrderBytes() {
+        java.lang.Object ref = sortOrder_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sortOrder_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ASC or DESC
+       * </pre>
+       *
+       * <code>string sortOrder = 4;</code>
+       */
+      public Builder setSortOrder(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sortOrder_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ASC or DESC
+       * </pre>
+       *
+       * <code>string sortOrder = 4;</code>
+       */
+      public Builder clearSortOrder() {
+        
+        sortOrder_ = getDefaultInstance().getSortOrder();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ASC or DESC
+       * </pre>
+       *
+       * <code>string sortOrder = 4;</code>
+       */
+      public Builder setSortOrderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sortOrder_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.dbmapp.grpc.SortRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.dbmapp.grpc.SortRequest)
+    private static final com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest();
+    }
+
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SortRequest>
+        PARSER = new com.google.protobuf.AbstractParser<SortRequest>() {
+      @java.lang.Override
+      public SortRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SortRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SortRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SortRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SortResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.dbmapp.grpc.SortResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+     */
+    java.util.List<com.dbmapp.grpc.FilteringSortingOuterClass.RowData> 
+        getSortedRowsList();
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+     */
+    com.dbmapp.grpc.FilteringSortingOuterClass.RowData getSortedRows(int index);
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+     */
+    int getSortedRowsCount();
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+     */
+    java.util.List<? extends com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder> 
+        getSortedRowsOrBuilderList();
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+     */
+    com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder getSortedRowsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code com.dbmapp.grpc.SortResponse}
+   */
+  public  static final class SortResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.dbmapp.grpc.SortResponse)
+      SortResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SortResponse.newBuilder() to construct.
+    private SortResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SortResponse() {
+      sortedRows_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SortResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                sortedRows_ = new java.util.ArrayList<com.dbmapp.grpc.FilteringSortingOuterClass.RowData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              sortedRows_.add(
+                  input.readMessage(com.dbmapp.grpc.FilteringSortingOuterClass.RowData.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          sortedRows_ = java.util.Collections.unmodifiableList(sortedRows_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_SortResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_SortResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse.class, com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse.Builder.class);
+    }
+
+    public static final int SORTEDROWS_FIELD_NUMBER = 1;
+    private java.util.List<com.dbmapp.grpc.FilteringSortingOuterClass.RowData> sortedRows_;
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+     */
+    public java.util.List<com.dbmapp.grpc.FilteringSortingOuterClass.RowData> getSortedRowsList() {
+      return sortedRows_;
+    }
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+     */
+    public java.util.List<? extends com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder> 
+        getSortedRowsOrBuilderList() {
+      return sortedRows_;
+    }
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+     */
+    public int getSortedRowsCount() {
+      return sortedRows_.size();
+    }
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+     */
+    public com.dbmapp.grpc.FilteringSortingOuterClass.RowData getSortedRows(int index) {
+      return sortedRows_.get(index);
+    }
+    /**
+     * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+     */
+    public com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder getSortedRowsOrBuilder(
+        int index) {
+      return sortedRows_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < sortedRows_.size(); i++) {
+        output.writeMessage(1, sortedRows_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < sortedRows_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, sortedRows_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse)) {
+        return super.equals(obj);
+      }
+      com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse other = (com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse) obj;
+
+      boolean result = true;
+      result = result && getSortedRowsList()
+          .equals(other.getSortedRowsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getSortedRowsCount() > 0) {
+        hash = (37 * hash) + SORTEDROWS_FIELD_NUMBER;
+        hash = (53 * hash) + getSortedRowsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.dbmapp.grpc.SortResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.dbmapp.grpc.SortResponse)
+        com.dbmapp.grpc.FilteringSortingOuterClass.SortResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_SortResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_SortResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse.class, com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse.Builder.class);
+      }
+
+      // Construct using com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSortedRowsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (sortedRowsBuilder_ == null) {
+          sortedRows_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          sortedRowsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_SortResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse getDefaultInstanceForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse build() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse buildPartial() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse result = new com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (sortedRowsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            sortedRows_ = java.util.Collections.unmodifiableList(sortedRows_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.sortedRows_ = sortedRows_;
+        } else {
+          result.sortedRows_ = sortedRowsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse) {
+          return mergeFrom((com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse other) {
+        if (other == com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse.getDefaultInstance()) return this;
+        if (sortedRowsBuilder_ == null) {
+          if (!other.sortedRows_.isEmpty()) {
+            if (sortedRows_.isEmpty()) {
+              sortedRows_ = other.sortedRows_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSortedRowsIsMutable();
+              sortedRows_.addAll(other.sortedRows_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.sortedRows_.isEmpty()) {
+            if (sortedRowsBuilder_.isEmpty()) {
+              sortedRowsBuilder_.dispose();
+              sortedRowsBuilder_ = null;
+              sortedRows_ = other.sortedRows_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              sortedRowsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSortedRowsFieldBuilder() : null;
+            } else {
+              sortedRowsBuilder_.addAllMessages(other.sortedRows_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.dbmapp.grpc.FilteringSortingOuterClass.RowData> sortedRows_ =
+        java.util.Collections.emptyList();
+      private void ensureSortedRowsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          sortedRows_ = new java.util.ArrayList<com.dbmapp.grpc.FilteringSortingOuterClass.RowData>(sortedRows_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dbmapp.grpc.FilteringSortingOuterClass.RowData, com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder, com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder> sortedRowsBuilder_;
+
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public java.util.List<com.dbmapp.grpc.FilteringSortingOuterClass.RowData> getSortedRowsList() {
+        if (sortedRowsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(sortedRows_);
+        } else {
+          return sortedRowsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public int getSortedRowsCount() {
+        if (sortedRowsBuilder_ == null) {
+          return sortedRows_.size();
+        } else {
+          return sortedRowsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public com.dbmapp.grpc.FilteringSortingOuterClass.RowData getSortedRows(int index) {
+        if (sortedRowsBuilder_ == null) {
+          return sortedRows_.get(index);
+        } else {
+          return sortedRowsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public Builder setSortedRows(
+          int index, com.dbmapp.grpc.FilteringSortingOuterClass.RowData value) {
+        if (sortedRowsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSortedRowsIsMutable();
+          sortedRows_.set(index, value);
+          onChanged();
+        } else {
+          sortedRowsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public Builder setSortedRows(
+          int index, com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder builderForValue) {
+        if (sortedRowsBuilder_ == null) {
+          ensureSortedRowsIsMutable();
+          sortedRows_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          sortedRowsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public Builder addSortedRows(com.dbmapp.grpc.FilteringSortingOuterClass.RowData value) {
+        if (sortedRowsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSortedRowsIsMutable();
+          sortedRows_.add(value);
+          onChanged();
+        } else {
+          sortedRowsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public Builder addSortedRows(
+          int index, com.dbmapp.grpc.FilteringSortingOuterClass.RowData value) {
+        if (sortedRowsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSortedRowsIsMutable();
+          sortedRows_.add(index, value);
+          onChanged();
+        } else {
+          sortedRowsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public Builder addSortedRows(
+          com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder builderForValue) {
+        if (sortedRowsBuilder_ == null) {
+          ensureSortedRowsIsMutable();
+          sortedRows_.add(builderForValue.build());
+          onChanged();
+        } else {
+          sortedRowsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public Builder addSortedRows(
+          int index, com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder builderForValue) {
+        if (sortedRowsBuilder_ == null) {
+          ensureSortedRowsIsMutable();
+          sortedRows_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          sortedRowsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public Builder addAllSortedRows(
+          java.lang.Iterable<? extends com.dbmapp.grpc.FilteringSortingOuterClass.RowData> values) {
+        if (sortedRowsBuilder_ == null) {
+          ensureSortedRowsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, sortedRows_);
+          onChanged();
+        } else {
+          sortedRowsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public Builder clearSortedRows() {
+        if (sortedRowsBuilder_ == null) {
+          sortedRows_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          sortedRowsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public Builder removeSortedRows(int index) {
+        if (sortedRowsBuilder_ == null) {
+          ensureSortedRowsIsMutable();
+          sortedRows_.remove(index);
+          onChanged();
+        } else {
+          sortedRowsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder getSortedRowsBuilder(
+          int index) {
+        return getSortedRowsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder getSortedRowsOrBuilder(
+          int index) {
+        if (sortedRowsBuilder_ == null) {
+          return sortedRows_.get(index);  } else {
+          return sortedRowsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public java.util.List<? extends com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder> 
+           getSortedRowsOrBuilderList() {
+        if (sortedRowsBuilder_ != null) {
+          return sortedRowsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(sortedRows_);
+        }
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder addSortedRowsBuilder() {
+        return getSortedRowsFieldBuilder().addBuilder(
+            com.dbmapp.grpc.FilteringSortingOuterClass.RowData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder addSortedRowsBuilder(
+          int index) {
+        return getSortedRowsFieldBuilder().addBuilder(
+            index, com.dbmapp.grpc.FilteringSortingOuterClass.RowData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.dbmapp.grpc.RowData sortedRows = 1;</code>
+       */
+      public java.util.List<com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder> 
+           getSortedRowsBuilderList() {
+        return getSortedRowsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dbmapp.grpc.FilteringSortingOuterClass.RowData, com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder, com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder> 
+          getSortedRowsFieldBuilder() {
+        if (sortedRowsBuilder_ == null) {
+          sortedRowsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dbmapp.grpc.FilteringSortingOuterClass.RowData, com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder, com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder>(
+                  sortedRows_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          sortedRows_ = null;
+        }
+        return sortedRowsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.dbmapp.grpc.SortResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.dbmapp.grpc.SortResponse)
+    private static final com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse();
+    }
+
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SortResponse>
+        PARSER = new com.google.protobuf.AbstractParser<SortResponse>() {
+      @java.lang.Override
+      public SortResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SortResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SortResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SortResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dbmapp.grpc.FilteringSortingOuterClass.SortResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ModifyColumnRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.dbmapp.grpc.ModifyColumnRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string schemaName = 1;</code>
+     */
+    java.lang.String getSchemaName();
+    /**
+     * <code>string schemaName = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getSchemaNameBytes();
+
+    /**
+     * <code>string tableName = 2;</code>
+     */
+    java.lang.String getTableName();
+    /**
+     * <code>string tableName = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTableNameBytes();
+
+    /**
+     * <code>string columnName = 3;</code>
+     */
+    java.lang.String getColumnName();
+    /**
+     * <code>string columnName = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getColumnNameBytes();
+
+    /**
+     * <code>string newDataType = 4;</code>
+     */
+    java.lang.String getNewDataType();
+    /**
+     * <code>string newDataType = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getNewDataTypeBytes();
+  }
+  /**
+   * <pre>
+   * --- Modify Column Type ---
+   * </pre>
+   *
+   * Protobuf type {@code com.dbmapp.grpc.ModifyColumnRequest}
+   */
+  public  static final class ModifyColumnRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.dbmapp.grpc.ModifyColumnRequest)
+      ModifyColumnRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ModifyColumnRequest.newBuilder() to construct.
+    private ModifyColumnRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ModifyColumnRequest() {
+      schemaName_ = "";
+      tableName_ = "";
+      columnName_ = "";
+      newDataType_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ModifyColumnRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              schemaName_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tableName_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              columnName_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              newDataType_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_ModifyColumnRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_ModifyColumnRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest.class, com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest.Builder.class);
+    }
+
+    public static final int SCHEMANAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object schemaName_;
+    /**
+     * <code>string schemaName = 1;</code>
+     */
+    public java.lang.String getSchemaName() {
+      java.lang.Object ref = schemaName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        schemaName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string schemaName = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSchemaNameBytes() {
+      java.lang.Object ref = schemaName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        schemaName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TABLENAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object tableName_;
+    /**
+     * <code>string tableName = 2;</code>
+     */
+    public java.lang.String getTableName() {
+      java.lang.Object ref = tableName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tableName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string tableName = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTableNameBytes() {
+      java.lang.Object ref = tableName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tableName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COLUMNNAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object columnName_;
+    /**
+     * <code>string columnName = 3;</code>
+     */
+    public java.lang.String getColumnName() {
+      java.lang.Object ref = columnName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        columnName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string columnName = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getColumnNameBytes() {
+      java.lang.Object ref = columnName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        columnName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NEWDATATYPE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object newDataType_;
+    /**
+     * <code>string newDataType = 4;</code>
+     */
+    public java.lang.String getNewDataType() {
+      java.lang.Object ref = newDataType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        newDataType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string newDataType = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNewDataTypeBytes() {
+      java.lang.Object ref = newDataType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        newDataType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getSchemaNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, schemaName_);
+      }
+      if (!getTableNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tableName_);
+      }
+      if (!getColumnNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, columnName_);
+      }
+      if (!getNewDataTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, newDataType_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getSchemaNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, schemaName_);
+      }
+      if (!getTableNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tableName_);
+      }
+      if (!getColumnNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, columnName_);
+      }
+      if (!getNewDataTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, newDataType_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest)) {
+        return super.equals(obj);
+      }
+      com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest other = (com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest) obj;
+
+      boolean result = true;
+      result = result && getSchemaName()
+          .equals(other.getSchemaName());
+      result = result && getTableName()
+          .equals(other.getTableName());
+      result = result && getColumnName()
+          .equals(other.getColumnName());
+      result = result && getNewDataType()
+          .equals(other.getNewDataType());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SCHEMANAME_FIELD_NUMBER;
+      hash = (53 * hash) + getSchemaName().hashCode();
+      hash = (37 * hash) + TABLENAME_FIELD_NUMBER;
+      hash = (53 * hash) + getTableName().hashCode();
+      hash = (37 * hash) + COLUMNNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getColumnName().hashCode();
+      hash = (37 * hash) + NEWDATATYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getNewDataType().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * --- Modify Column Type ---
+     * </pre>
+     *
+     * Protobuf type {@code com.dbmapp.grpc.ModifyColumnRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.dbmapp.grpc.ModifyColumnRequest)
+        com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_ModifyColumnRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_ModifyColumnRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest.class, com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest.Builder.class);
+      }
+
+      // Construct using com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        schemaName_ = "";
+
+        tableName_ = "";
+
+        columnName_ = "";
+
+        newDataType_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_ModifyColumnRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest getDefaultInstanceForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest build() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest buildPartial() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest result = new com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest(this);
+        result.schemaName_ = schemaName_;
+        result.tableName_ = tableName_;
+        result.columnName_ = columnName_;
+        result.newDataType_ = newDataType_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest) {
+          return mergeFrom((com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest other) {
+        if (other == com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest.getDefaultInstance()) return this;
+        if (!other.getSchemaName().isEmpty()) {
+          schemaName_ = other.schemaName_;
+          onChanged();
+        }
+        if (!other.getTableName().isEmpty()) {
+          tableName_ = other.tableName_;
+          onChanged();
+        }
+        if (!other.getColumnName().isEmpty()) {
+          columnName_ = other.columnName_;
+          onChanged();
+        }
+        if (!other.getNewDataType().isEmpty()) {
+          newDataType_ = other.newDataType_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object schemaName_ = "";
+      /**
+       * <code>string schemaName = 1;</code>
+       */
+      public java.lang.String getSchemaName() {
+        java.lang.Object ref = schemaName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          schemaName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string schemaName = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSchemaNameBytes() {
+        java.lang.Object ref = schemaName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          schemaName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string schemaName = 1;</code>
+       */
+      public Builder setSchemaName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        schemaName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string schemaName = 1;</code>
+       */
+      public Builder clearSchemaName() {
+        
+        schemaName_ = getDefaultInstance().getSchemaName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string schemaName = 1;</code>
+       */
+      public Builder setSchemaNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        schemaName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tableName_ = "";
+      /**
+       * <code>string tableName = 2;</code>
+       */
+      public java.lang.String getTableName() {
+        java.lang.Object ref = tableName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tableName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string tableName = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTableNameBytes() {
+        java.lang.Object ref = tableName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tableName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string tableName = 2;</code>
+       */
+      public Builder setTableName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tableName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string tableName = 2;</code>
+       */
+      public Builder clearTableName() {
+        
+        tableName_ = getDefaultInstance().getTableName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string tableName = 2;</code>
+       */
+      public Builder setTableNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tableName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object columnName_ = "";
+      /**
+       * <code>string columnName = 3;</code>
+       */
+      public java.lang.String getColumnName() {
+        java.lang.Object ref = columnName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          columnName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string columnName = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getColumnNameBytes() {
+        java.lang.Object ref = columnName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          columnName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string columnName = 3;</code>
+       */
+      public Builder setColumnName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        columnName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string columnName = 3;</code>
+       */
+      public Builder clearColumnName() {
+        
+        columnName_ = getDefaultInstance().getColumnName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string columnName = 3;</code>
+       */
+      public Builder setColumnNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        columnName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object newDataType_ = "";
+      /**
+       * <code>string newDataType = 4;</code>
+       */
+      public java.lang.String getNewDataType() {
+        java.lang.Object ref = newDataType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          newDataType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string newDataType = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNewDataTypeBytes() {
+        java.lang.Object ref = newDataType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          newDataType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string newDataType = 4;</code>
+       */
+      public Builder setNewDataType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        newDataType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string newDataType = 4;</code>
+       */
+      public Builder clearNewDataType() {
+        
+        newDataType_ = getDefaultInstance().getNewDataType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string newDataType = 4;</code>
+       */
+      public Builder setNewDataTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        newDataType_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.dbmapp.grpc.ModifyColumnRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.dbmapp.grpc.ModifyColumnRequest)
+    private static final com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest();
+    }
+
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ModifyColumnRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ModifyColumnRequest>() {
+      @java.lang.Override
+      public ModifyColumnRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ModifyColumnRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ModifyColumnRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ModifyColumnRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ModifyColumnResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.dbmapp.grpc.ModifyColumnResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool success = 1;</code>
+     */
+    boolean getSuccess();
+
+    /**
+     * <code>string message = 2;</code>
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>string message = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+  }
+  /**
+   * Protobuf type {@code com.dbmapp.grpc.ModifyColumnResponse}
+   */
+  public  static final class ModifyColumnResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.dbmapp.grpc.ModifyColumnResponse)
+      ModifyColumnResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ModifyColumnResponse.newBuilder() to construct.
+    private ModifyColumnResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ModifyColumnResponse() {
+      success_ = false;
+      message_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ModifyColumnResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              success_ = input.readBool();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              message_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_ModifyColumnResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_ModifyColumnResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse.class, com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse.Builder.class);
+    }
+
+    public static final int SUCCESS_FIELD_NUMBER = 1;
+    private boolean success_;
+    /**
+     * <code>bool success = 1;</code>
+     */
+    public boolean getSuccess() {
+      return success_;
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object message_;
+    /**
+     * <code>string message = 2;</code>
+     */
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string message = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (success_ != false) {
+        output.writeBool(1, success_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (success_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, success_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse)) {
+        return super.equals(obj);
+      }
+      com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse other = (com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse) obj;
+
+      boolean result = true;
+      result = result && (getSuccess()
+          == other.getSuccess());
+      result = result && getMessage()
+          .equals(other.getMessage());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSuccess());
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.dbmapp.grpc.ModifyColumnResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.dbmapp.grpc.ModifyColumnResponse)
+        com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_ModifyColumnResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_ModifyColumnResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse.class, com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse.Builder.class);
+      }
+
+      // Construct using com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        success_ = false;
+
+        message_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_ModifyColumnResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse getDefaultInstanceForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse build() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse buildPartial() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse result = new com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse(this);
+        result.success_ = success_;
+        result.message_ = message_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse) {
+          return mergeFrom((com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse other) {
+        if (other == com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse.getDefaultInstance()) return this;
+        if (other.getSuccess() != false) {
+          setSuccess(other.getSuccess());
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean success_ ;
+      /**
+       * <code>bool success = 1;</code>
+       */
+      public boolean getSuccess() {
+        return success_;
+      }
+      /**
+       * <code>bool success = 1;</code>
+       */
+      public Builder setSuccess(boolean value) {
+        
+        success_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool success = 1;</code>
+       */
+      public Builder clearSuccess() {
+        
+        success_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>string message = 2;</code>
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string message = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string message = 2;</code>
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 2;</code>
+       */
+      public Builder clearMessage() {
+        
+        message_ = getDefaultInstance().getMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 2;</code>
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.dbmapp.grpc.ModifyColumnResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.dbmapp.grpc.ModifyColumnResponse)
+    private static final com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse();
+    }
+
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ModifyColumnResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ModifyColumnResponse>() {
+      @java.lang.Override
+      public ModifyColumnResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ModifyColumnResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ModifyColumnResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ModifyColumnResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dbmapp.grpc.FilteringSortingOuterClass.ModifyColumnResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface InteractiveFilterRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.dbmapp.grpc.InteractiveFilterRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string columnName = 1;</code>
+     */
+    java.lang.String getColumnName();
+    /**
+     * <code>string columnName = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getColumnNameBytes();
+
+    /**
+     * <code>string filterCondition = 2;</code>
+     */
+    java.lang.String getFilterCondition();
+    /**
+     * <code>string filterCondition = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getFilterConditionBytes();
+
+    /**
+     * <code>string value = 3;</code>
+     */
+    java.lang.String getValue();
+    /**
+     * <code>string value = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getValueBytes();
+  }
+  /**
+   * <pre>
+   * --- Interactive Filtering ---
+   * </pre>
+   *
+   * Protobuf type {@code com.dbmapp.grpc.InteractiveFilterRequest}
+   */
+  public  static final class InteractiveFilterRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.dbmapp.grpc.InteractiveFilterRequest)
+      InteractiveFilterRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use InteractiveFilterRequest.newBuilder() to construct.
+    private InteractiveFilterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private InteractiveFilterRequest() {
+      columnName_ = "";
+      filterCondition_ = "";
+      value_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private InteractiveFilterRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              columnName_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              filterCondition_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              value_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_InteractiveFilterRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_InteractiveFilterRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest.class, com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest.Builder.class);
+    }
+
+    public static final int COLUMNNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object columnName_;
+    /**
+     * <code>string columnName = 1;</code>
+     */
+    public java.lang.String getColumnName() {
+      java.lang.Object ref = columnName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        columnName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string columnName = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getColumnNameBytes() {
+      java.lang.Object ref = columnName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        columnName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FILTERCONDITION_FIELD_NUMBER = 2;
+    private volatile java.lang.Object filterCondition_;
+    /**
+     * <code>string filterCondition = 2;</code>
+     */
+    public java.lang.String getFilterCondition() {
+      java.lang.Object ref = filterCondition_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filterCondition_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string filterCondition = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFilterConditionBytes() {
+      java.lang.Object ref = filterCondition_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        filterCondition_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object value_;
+    /**
+     * <code>string value = 3;</code>
+     */
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string value = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getColumnNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
+      }
+      if (!getFilterConditionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filterCondition_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, value_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getColumnNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
+      }
+      if (!getFilterConditionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filterCondition_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, value_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest)) {
+        return super.equals(obj);
+      }
+      com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest other = (com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest) obj;
+
+      boolean result = true;
+      result = result && getColumnName()
+          .equals(other.getColumnName());
+      result = result && getFilterCondition()
+          .equals(other.getFilterCondition());
+      result = result && getValue()
+          .equals(other.getValue());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + COLUMNNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getColumnName().hashCode();
+      hash = (37 * hash) + FILTERCONDITION_FIELD_NUMBER;
+      hash = (53 * hash) + getFilterCondition().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * --- Interactive Filtering ---
+     * </pre>
+     *
+     * Protobuf type {@code com.dbmapp.grpc.InteractiveFilterRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.dbmapp.grpc.InteractiveFilterRequest)
+        com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_InteractiveFilterRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_InteractiveFilterRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest.class, com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest.Builder.class);
+      }
+
+      // Construct using com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        columnName_ = "";
+
+        filterCondition_ = "";
+
+        value_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_InteractiveFilterRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest getDefaultInstanceForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest build() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest buildPartial() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest result = new com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest(this);
+        result.columnName_ = columnName_;
+        result.filterCondition_ = filterCondition_;
+        result.value_ = value_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest) {
+          return mergeFrom((com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest other) {
+        if (other == com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest.getDefaultInstance()) return this;
+        if (!other.getColumnName().isEmpty()) {
+          columnName_ = other.columnName_;
+          onChanged();
+        }
+        if (!other.getFilterCondition().isEmpty()) {
+          filterCondition_ = other.filterCondition_;
+          onChanged();
+        }
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object columnName_ = "";
+      /**
+       * <code>string columnName = 1;</code>
+       */
+      public java.lang.String getColumnName() {
+        java.lang.Object ref = columnName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          columnName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string columnName = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getColumnNameBytes() {
+        java.lang.Object ref = columnName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          columnName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string columnName = 1;</code>
+       */
+      public Builder setColumnName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        columnName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string columnName = 1;</code>
+       */
+      public Builder clearColumnName() {
+        
+        columnName_ = getDefaultInstance().getColumnName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string columnName = 1;</code>
+       */
+      public Builder setColumnNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        columnName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object filterCondition_ = "";
+      /**
+       * <code>string filterCondition = 2;</code>
+       */
+      public java.lang.String getFilterCondition() {
+        java.lang.Object ref = filterCondition_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          filterCondition_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string filterCondition = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFilterConditionBytes() {
+        java.lang.Object ref = filterCondition_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          filterCondition_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string filterCondition = 2;</code>
+       */
+      public Builder setFilterCondition(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        filterCondition_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string filterCondition = 2;</code>
+       */
+      public Builder clearFilterCondition() {
+        
+        filterCondition_ = getDefaultInstance().getFilterCondition();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string filterCondition = 2;</code>
+       */
+      public Builder setFilterConditionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        filterCondition_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object value_ = "";
+      /**
+       * <code>string value = 3;</code>
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string value = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string value = 3;</code>
+       */
+      public Builder setValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string value = 3;</code>
+       */
+      public Builder clearValue() {
+        
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string value = 3;</code>
+       */
+      public Builder setValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.dbmapp.grpc.InteractiveFilterRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.dbmapp.grpc.InteractiveFilterRequest)
+    private static final com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest();
+    }
+
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InteractiveFilterRequest>
+        PARSER = new com.google.protobuf.AbstractParser<InteractiveFilterRequest>() {
+      @java.lang.Override
+      public InteractiveFilterRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new InteractiveFilterRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<InteractiveFilterRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InteractiveFilterRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dbmapp.grpc.FilteringSortingOuterClass.InteractiveFilterRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RowDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.dbmapp.grpc.RowData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
      * <code>repeated string values = 1;</code>
      */
     java.util.List<java.lang.String>
         getValuesList();
     /**
-     * <pre>
-     * The entire row returned from the query
-     * </pre>
-     *
      * <code>repeated string values = 1;</code>
      */
     int getValuesCount();
     /**
-     * <pre>
-     * The entire row returned from the query
-     * </pre>
-     *
      * <code>repeated string values = 1;</code>
      */
     java.lang.String getValues(int index);
     /**
-     * <pre>
-     * The entire row returned from the query
-     * </pre>
-     *
      * <code>repeated string values = 1;</code>
      */
     com.google.protobuf.ByteString
         getValuesBytes(int index);
   }
   /**
-   * <pre>
-   * Message: FilteredRow
-   * -----------------------------------------------
-   * One row returned by the server that matched the filter.
-   * </pre>
-   *
-   * Protobuf type {@code FilteredRow}
+   * Protobuf type {@code com.dbmapp.grpc.RowData}
    */
-  public  static final class FilteredRow extends
+  public  static final class RowData extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:FilteredRow)
-      FilteredRowOrBuilder {
+      // @@protoc_insertion_point(message_implements:com.dbmapp.grpc.RowData)
+      RowDataOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use FilteredRow.newBuilder() to construct.
-    private FilteredRow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use RowData.newBuilder() to construct.
+    private RowData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private FilteredRow() {
+    private RowData() {
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -1543,7 +6184,7 @@ public final class FilteringSortingOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FilteredRow(
+    private RowData(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1595,24 +6236,20 @@ public final class FilteringSortingOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilteredRow_descriptor;
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_RowData_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilteredRow_fieldAccessorTable
+      return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_RowData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow.class, com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow.Builder.class);
+              com.dbmapp.grpc.FilteringSortingOuterClass.RowData.class, com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder.class);
     }
 
     public static final int VALUES_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList values_;
     /**
-     * <pre>
-     * The entire row returned from the query
-     * </pre>
-     *
      * <code>repeated string values = 1;</code>
      */
     public com.google.protobuf.ProtocolStringList
@@ -1620,30 +6257,18 @@ public final class FilteringSortingOuterClass {
       return values_;
     }
     /**
-     * <pre>
-     * The entire row returned from the query
-     * </pre>
-     *
      * <code>repeated string values = 1;</code>
      */
     public int getValuesCount() {
       return values_.size();
     }
     /**
-     * <pre>
-     * The entire row returned from the query
-     * </pre>
-     *
      * <code>repeated string values = 1;</code>
      */
     public java.lang.String getValues(int index) {
       return values_.get(index);
     }
     /**
-     * <pre>
-     * The entire row returned from the query
-     * </pre>
-     *
      * <code>repeated string values = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -1695,10 +6320,10 @@ public final class FilteringSortingOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow)) {
+      if (!(obj instanceof com.dbmapp.grpc.FilteringSortingOuterClass.RowData)) {
         return super.equals(obj);
       }
-      com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow other = (com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow) obj;
+      com.dbmapp.grpc.FilteringSortingOuterClass.RowData other = (com.dbmapp.grpc.FilteringSortingOuterClass.RowData) obj;
 
       boolean result = true;
       result = result && getValuesList()
@@ -1723,69 +6348,69 @@ public final class FilteringSortingOuterClass {
       return hash;
     }
 
-    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.RowData parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.RowData parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.RowData parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.RowData parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(byte[] data)
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.RowData parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.RowData parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(java.io.InputStream input)
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.RowData parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.RowData parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseDelimitedFrom(java.io.InputStream input)
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.RowData parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseDelimitedFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.RowData parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.RowData parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parseFrom(
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.RowData parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1798,7 +6423,7 @@ public final class FilteringSortingOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow prototype) {
+    public static Builder newBuilder(com.dbmapp.grpc.FilteringSortingOuterClass.RowData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1814,32 +6439,26 @@ public final class FilteringSortingOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * Message: FilteredRow
-     * -----------------------------------------------
-     * One row returned by the server that matched the filter.
-     * </pre>
-     *
-     * Protobuf type {@code FilteredRow}
+     * Protobuf type {@code com.dbmapp.grpc.RowData}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:FilteredRow)
-        com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRowOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.dbmapp.grpc.RowData)
+        com.dbmapp.grpc.FilteringSortingOuterClass.RowDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilteredRow_descriptor;
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_RowData_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilteredRow_fieldAccessorTable
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_RowData_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow.class, com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow.Builder.class);
+                com.dbmapp.grpc.FilteringSortingOuterClass.RowData.class, com.dbmapp.grpc.FilteringSortingOuterClass.RowData.Builder.class);
       }
 
-      // Construct using com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow.newBuilder()
+      // Construct using com.dbmapp.grpc.FilteringSortingOuterClass.RowData.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1865,17 +6484,17 @@ public final class FilteringSortingOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_FilteredRow_descriptor;
+        return com.dbmapp.grpc.FilteringSortingOuterClass.internal_static_com_dbmapp_grpc_RowData_descriptor;
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow getDefaultInstanceForType() {
-        return com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow.getDefaultInstance();
+      public com.dbmapp.grpc.FilteringSortingOuterClass.RowData getDefaultInstanceForType() {
+        return com.dbmapp.grpc.FilteringSortingOuterClass.RowData.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow build() {
-        com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow result = buildPartial();
+      public com.dbmapp.grpc.FilteringSortingOuterClass.RowData build() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.RowData result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1883,8 +6502,8 @@ public final class FilteringSortingOuterClass {
       }
 
       @java.lang.Override
-      public com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow buildPartial() {
-        com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow result = new com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow(this);
+      public com.dbmapp.grpc.FilteringSortingOuterClass.RowData buildPartial() {
+        com.dbmapp.grpc.FilteringSortingOuterClass.RowData result = new com.dbmapp.grpc.FilteringSortingOuterClass.RowData(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           values_ = values_.getUnmodifiableView();
@@ -1929,16 +6548,16 @@ public final class FilteringSortingOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow) {
-          return mergeFrom((com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow)other);
+        if (other instanceof com.dbmapp.grpc.FilteringSortingOuterClass.RowData) {
+          return mergeFrom((com.dbmapp.grpc.FilteringSortingOuterClass.RowData)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow other) {
-        if (other == com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dbmapp.grpc.FilteringSortingOuterClass.RowData other) {
+        if (other == com.dbmapp.grpc.FilteringSortingOuterClass.RowData.getDefaultInstance()) return this;
         if (!other.values_.isEmpty()) {
           if (values_.isEmpty()) {
             values_ = other.values_;
@@ -1964,11 +6583,11 @@ public final class FilteringSortingOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow parsedMessage = null;
+        com.dbmapp.grpc.FilteringSortingOuterClass.RowData parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow) e.getUnfinishedMessage();
+          parsedMessage = (com.dbmapp.grpc.FilteringSortingOuterClass.RowData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1987,10 +6606,6 @@ public final class FilteringSortingOuterClass {
          }
       }
       /**
-       * <pre>
-       * The entire row returned from the query
-       * </pre>
-       *
        * <code>repeated string values = 1;</code>
        */
       public com.google.protobuf.ProtocolStringList
@@ -1998,30 +6613,18 @@ public final class FilteringSortingOuterClass {
         return values_.getUnmodifiableView();
       }
       /**
-       * <pre>
-       * The entire row returned from the query
-       * </pre>
-       *
        * <code>repeated string values = 1;</code>
        */
       public int getValuesCount() {
         return values_.size();
       }
       /**
-       * <pre>
-       * The entire row returned from the query
-       * </pre>
-       *
        * <code>repeated string values = 1;</code>
        */
       public java.lang.String getValues(int index) {
         return values_.get(index);
       }
       /**
-       * <pre>
-       * The entire row returned from the query
-       * </pre>
-       *
        * <code>repeated string values = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -2029,10 +6632,6 @@ public final class FilteringSortingOuterClass {
         return values_.getByteString(index);
       }
       /**
-       * <pre>
-       * The entire row returned from the query
-       * </pre>
-       *
        * <code>repeated string values = 1;</code>
        */
       public Builder setValues(
@@ -2046,10 +6645,6 @@ public final class FilteringSortingOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * The entire row returned from the query
-       * </pre>
-       *
        * <code>repeated string values = 1;</code>
        */
       public Builder addValues(
@@ -2063,10 +6658,6 @@ public final class FilteringSortingOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * The entire row returned from the query
-       * </pre>
-       *
        * <code>repeated string values = 1;</code>
        */
       public Builder addAllValues(
@@ -2078,10 +6669,6 @@ public final class FilteringSortingOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * The entire row returned from the query
-       * </pre>
-       *
        * <code>repeated string values = 1;</code>
        */
       public Builder clearValues() {
@@ -2091,10 +6678,6 @@ public final class FilteringSortingOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * The entire row returned from the query
-       * </pre>
-       *
        * <code>repeated string values = 1;</code>
        */
       public Builder addValuesBytes(
@@ -2121,56 +6704,86 @@ public final class FilteringSortingOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:FilteredRow)
+      // @@protoc_insertion_point(builder_scope:com.dbmapp.grpc.RowData)
     }
 
-    // @@protoc_insertion_point(class_scope:FilteredRow)
-    private static final com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.dbmapp.grpc.RowData)
+    private static final com.dbmapp.grpc.FilteringSortingOuterClass.RowData DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow();
+      DEFAULT_INSTANCE = new com.dbmapp.grpc.FilteringSortingOuterClass.RowData();
     }
 
-    public static com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow getDefaultInstance() {
+    public static com.dbmapp.grpc.FilteringSortingOuterClass.RowData getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<FilteredRow>
-        PARSER = new com.google.protobuf.AbstractParser<FilteredRow>() {
+    private static final com.google.protobuf.Parser<RowData>
+        PARSER = new com.google.protobuf.AbstractParser<RowData>() {
       @java.lang.Override
-      public FilteredRow parsePartialFrom(
+      public RowData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FilteredRow(input, extensionRegistry);
+        return new RowData(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<FilteredRow> parser() {
+    public static com.google.protobuf.Parser<RowData> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<FilteredRow> getParserForType() {
+    public com.google.protobuf.Parser<RowData> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dbmapp.grpc.FilteringSortingOuterClass.FilteredRow getDefaultInstanceForType() {
+    public com.dbmapp.grpc.FilteringSortingOuterClass.RowData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_FilterRequest_descriptor;
+    internal_static_com_dbmapp_grpc_FilterRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_FilterRequest_fieldAccessorTable;
+      internal_static_com_dbmapp_grpc_FilterRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_FilteredRow_descriptor;
+    internal_static_com_dbmapp_grpc_FilterResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_FilteredRow_fieldAccessorTable;
+      internal_static_com_dbmapp_grpc_FilterResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_dbmapp_grpc_SortRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_dbmapp_grpc_SortRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_dbmapp_grpc_SortResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_dbmapp_grpc_SortResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_dbmapp_grpc_ModifyColumnRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_dbmapp_grpc_ModifyColumnRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_dbmapp_grpc_ModifyColumnResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_dbmapp_grpc_ModifyColumnResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_dbmapp_grpc_InteractiveFilterRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_dbmapp_grpc_InteractiveFilterRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_dbmapp_grpc_RowData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_dbmapp_grpc_RowData_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2180,14 +6793,32 @@ public final class FilteringSortingOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026FilteringSorting.proto\"~\n\rFilterReques" +
-      "t\022\023\n\013schema_name\030\001 \001(\t\022\022\n\ntable_name\030\002 \001" +
-      "(\t\022\016\n\006column\030\003 \001(\t\022\021\n\toperation\030\004 \001(\t\022\r\n" +
-      "\005value\030\005 \001(\t\022\022\n\nsort_order\030\006 \001(\t\"\035\n\013Filt" +
-      "eredRow\022\016\n\006values\030\001 \003(\t2I\n\020FilteringSort" +
-      "ing\0225\n\021LiveFilterAndSort\022\016.FilterRequest" +
-      "\032\014.FilteredRow(\0010\001B\021\n\017com.dbmapp.grpcb\006p" +
-      "roto3"
+      "\n\026FilteringSorting.proto\022\017com.dbmapp.grp" +
+      "c\"r\n\rFilterRequest\022\022\n\nschemaName\030\001 \001(\t\022\021" +
+      "\n\ttableName\030\002 \001(\t\022\022\n\ncolumnName\030\003 \001(\t\022\027\n" +
+      "\017filterCondition\030\004 \001(\t\022\r\n\005value\030\005 \001(\t\"@\n" +
+      "\016FilterResponse\022.\n\014filteredRows\030\001 \003(\0132\030." +
+      "com.dbmapp.grpc.RowData\"[\n\013SortRequest\022\022" +
+      "\n\nschemaName\030\001 \001(\t\022\021\n\ttableName\030\002 \001(\t\022\022\n" +
+      "\ncolumnName\030\003 \001(\t\022\021\n\tsortOrder\030\004 \001(\t\"<\n\014" +
+      "SortResponse\022,\n\nsortedRows\030\001 \003(\0132\030.com.d" +
+      "bmapp.grpc.RowData\"e\n\023ModifyColumnReques" +
+      "t\022\022\n\nschemaName\030\001 \001(\t\022\021\n\ttableName\030\002 \001(\t" +
+      "\022\022\n\ncolumnName\030\003 \001(\t\022\023\n\013newDataType\030\004 \001(" +
+      "\t\"8\n\024ModifyColumnResponse\022\017\n\007success\030\001 \001" +
+      "(\010\022\017\n\007message\030\002 \001(\t\"V\n\030InteractiveFilter" +
+      "Request\022\022\n\ncolumnName\030\001 \001(\t\022\027\n\017filterCon" +
+      "dition\030\002 \001(\t\022\r\n\005value\030\003 \001(\t\"\031\n\007RowData\022\016" +
+      "\n\006values\030\001 \003(\t2\351\002\n\020FilteringSorting\022M\n\nF" +
+      "ilterData\022\036.com.dbmapp.grpc.FilterReques" +
+      "t\032\037.com.dbmapp.grpc.FilterResponse\022G\n\010So" +
+      "rtData\022\034.com.dbmapp.grpc.SortRequest\032\035.c" +
+      "om.dbmapp.grpc.SortResponse\022_\n\020ModifyCol" +
+      "umnType\022$.com.dbmapp.grpc.ModifyColumnRe" +
+      "quest\032%.com.dbmapp.grpc.ModifyColumnResp" +
+      "onse\022\\\n\021InteractiveFilter\022).com.dbmapp.g" +
+      "rpc.InteractiveFilterRequest\032\030.com.dbmap" +
+      "p.grpc.RowData(\0010\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2201,17 +6832,53 @@ public final class FilteringSortingOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_FilterRequest_descriptor =
+    internal_static_com_dbmapp_grpc_FilterRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_FilterRequest_fieldAccessorTable = new
+    internal_static_com_dbmapp_grpc_FilterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_FilterRequest_descriptor,
-        new java.lang.String[] { "SchemaName", "TableName", "Column", "Operation", "Value", "SortOrder", });
-    internal_static_FilteredRow_descriptor =
+        internal_static_com_dbmapp_grpc_FilterRequest_descriptor,
+        new java.lang.String[] { "SchemaName", "TableName", "ColumnName", "FilterCondition", "Value", });
+    internal_static_com_dbmapp_grpc_FilterResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_FilteredRow_fieldAccessorTable = new
+    internal_static_com_dbmapp_grpc_FilterResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_FilteredRow_descriptor,
+        internal_static_com_dbmapp_grpc_FilterResponse_descriptor,
+        new java.lang.String[] { "FilteredRows", });
+    internal_static_com_dbmapp_grpc_SortRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_com_dbmapp_grpc_SortRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_dbmapp_grpc_SortRequest_descriptor,
+        new java.lang.String[] { "SchemaName", "TableName", "ColumnName", "SortOrder", });
+    internal_static_com_dbmapp_grpc_SortResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_com_dbmapp_grpc_SortResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_dbmapp_grpc_SortResponse_descriptor,
+        new java.lang.String[] { "SortedRows", });
+    internal_static_com_dbmapp_grpc_ModifyColumnRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_com_dbmapp_grpc_ModifyColumnRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_dbmapp_grpc_ModifyColumnRequest_descriptor,
+        new java.lang.String[] { "SchemaName", "TableName", "ColumnName", "NewDataType", });
+    internal_static_com_dbmapp_grpc_ModifyColumnResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_com_dbmapp_grpc_ModifyColumnResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_dbmapp_grpc_ModifyColumnResponse_descriptor,
+        new java.lang.String[] { "Success", "Message", });
+    internal_static_com_dbmapp_grpc_InteractiveFilterRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_com_dbmapp_grpc_InteractiveFilterRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_dbmapp_grpc_InteractiveFilterRequest_descriptor,
+        new java.lang.String[] { "ColumnName", "FilterCondition", "Value", });
+    internal_static_com_dbmapp_grpc_RowData_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_com_dbmapp_grpc_RowData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_dbmapp_grpc_RowData_descriptor,
         new java.lang.String[] { "Values", });
   }
 

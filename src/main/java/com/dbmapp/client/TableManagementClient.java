@@ -13,6 +13,11 @@ import com.dbmapp.grpc.TableManagementOuterClass.GenericResponse;
 
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import java.util.List;
 
@@ -110,5 +115,21 @@ public class TableManagementClient {
     }
     */
 }
+    public void describeTable(String schema, String table) {
+    String query = String.format("DESCRIBE %s.%s", schema, table);
+    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + schema, "root", "00bob456");
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(query)) {
+
+        System.out.printf("%-25s %-15s\n", "Column", "Type");
+        System.out.println("-------------------------");
+        while (rs.next()) {
+            System.out.printf("%-25s %-15s\n", rs.getString("Field"), rs.getString("Type"));
+        }
+    } catch (SQLException e) {
+        System.err.println("❌ Error describing table: " + e.getMessage());
+    }
+}
+
 }
 

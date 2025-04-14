@@ -3,10 +3,12 @@ package com.dbmapp;
 import com.dbmapp.server.DatabaseManagementServer;
 import com.dbmapp.server.TableManagementServer;
 import com.dbmapp.server.CSVImportServer;
+import com.dbmapp.server.FilteringSortingServer;
 
 import com.dbmapp.client.DatabaseManagementClient;
 import com.dbmapp.client.TableManagementClient;
 import com.dbmapp.client.CSVImportClient;
+import com.dbmapp.client.FilteringSortingClient;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
@@ -25,6 +27,7 @@ public class DbmApp {
                     .addService(new DatabaseManagementServer())
                     .addService(new TableManagementServer())
                     .addService(new CSVImportServer())
+                    .addService(new FilteringSortingServer())
                     .build()
                     .start();
 
@@ -37,6 +40,7 @@ public class DbmApp {
             DatabaseManagementClient dbClient = new DatabaseManagementClient(channel);
             TableManagementClient tableClient = new TableManagementClient(channel);
             CSVImportClient csvClient = new CSVImportClient(channel, tableClient);
+            FilteringSortingClient filterClient = new FilteringSortingClient(channel);
 
 
             Scanner scanner = new Scanner(System.in);
@@ -75,9 +79,12 @@ public class DbmApp {
                             System.out.println("2. View Table Data");
                             System.out.println("3. Drop Table");
                             System.out.println("4. Import CSV and Create Table");
-                            System.out.println("5. Back to Main Menu");
+                            System.out.println("5. Use Table");
+                            System.out.println("6. Back to Main Menu");
                             System.out.print("Choose an option: ");
                             int tableChoice = Integer.parseInt(scanner.nextLine());
+                            String table = "";
+                            
 
                             switch (tableChoice) {
                                 case 1:
@@ -85,7 +92,7 @@ public class DbmApp {
                                     break;
                                 case 2:
                                     System.out.print("Enter table name: ");
-                                    String table = scanner.nextLine();
+                                    table = scanner.nextLine();
                                     System.out.print("Enter number of rows to view: ");
                                     int limit = Integer.parseInt(scanner.nextLine());
                                     tableClient.viewTableData(activeSchema, table, limit);
@@ -102,7 +109,63 @@ public class DbmApp {
                                     String csvPath = scanner.nextLine();
                                     csvClient.importCSVAndCreateTable(activeSchema, newTable, csvPath);
                                     break;
-                                case 7:
+                                case 5: // Use Table
+                                    System.out.print("Enter table name to use: ");
+                                    table = scanner.nextLine();
+
+                                    // Get column info
+                                    System.out.println("📋 Columns in table '" + table + "':");
+                                    tableClient.describeTable(activeSchema, table);  // <-- Make sure this is implemented
+
+                                    boolean inTableOps = true;
+                                    while (inTableOps) {
+                                        System.out.println("\n⚙️ Operations on table: " + table);
+                                        System.out.println("1. Filter table data");
+                                        System.out.println("2. Sort table data");
+                                        System.out.println("3. Modify column type");
+                                        System.out.println("4. Back to schema menu");
+                                        System.out.print("Choose an option: ");
+                                        int subChoice = Integer.parseInt(scanner.nextLine());
+
+                                        switch (subChoice) {
+                                            case 1:
+                                                System.out.print("Enter column to filter: ");
+                                                String filterCol = scanner.nextLine();
+                                                System.out.print("Enter filter condition (e.g. =, >, <, !=): ");
+                                                String filterCond = scanner.nextLine();
+                                                System.out.print("Enter filter value: ");
+                                                String filterVal = scanner.nextLine();
+                                                filterClient.filterData(activeSchema, table, filterCol, filterCond, filterVal);
+                                                break;
+
+                                            case 2:
+                                                System.out.print("Enter column to sort: ");
+                                                String sortCol = scanner.nextLine();
+                                                System.out.print("Enter sort order (ASC or DESC): ");
+                                                String sortOrder = scanner.nextLine();
+                                                filterClient.sortData(activeSchema, table, sortCol, sortOrder);
+                                                break;
+
+                                            case 3:
+                                                System.out.print("Enter column to modify: ");
+                                                String modCol = scanner.nextLine();
+                                                System.out.print("Enter new data type (e.g. VARCHAR(255), INT, DATE): ");
+                                                String newType = scanner.nextLine();
+                                                filterClient.modifyColumnType(activeSchema, table, modCol, newType);
+                                                break;
+
+                                            case 4:
+                                                inTableOps = false;
+                                                break;
+
+                                            default:
+                                                System.out.println("⚠️ Invalid option.");
+                                        }
+                                    }
+                                    break;
+
+
+                                case 8: // Back to Main Menu
                                     inTableMenu = false;
                                     activeSchema = null;
                                     System.out.println("⬅️ Returning to Main Menu...");
