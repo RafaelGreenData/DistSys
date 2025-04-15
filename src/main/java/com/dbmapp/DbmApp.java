@@ -80,7 +80,7 @@ public class DbmApp {
                             System.out.println("3. Drop Table");
                             System.out.println("4. Import CSV and Create Table");
                             System.out.println("5. Use Table");
-                            System.out.println("6. Back to Main Menu");
+                            System.out.println("6. Back to Schema Menu");
                             System.out.print("Choose an option: ");
                             int tableChoice = Integer.parseInt(scanner.nextLine());
                             String table = "";
@@ -123,7 +123,7 @@ public class DbmApp {
                                         System.out.println("1. Filter table data");
                                         System.out.println("2. Sort table data");
                                         System.out.println("3. Modify column type");
-                                        System.out.println("4. Back to schema menu");
+                                        System.out.println("4. Back to Table menu");
                                         System.out.print("Choose an option: ");
                                         int subChoice = Integer.parseInt(scanner.nextLine());
 
