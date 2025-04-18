@@ -19,45 +19,14 @@ public class FilteringSortingClient {
         this.asyncStub = FilteringSortingGrpc.newStub(channel);
     }
 
-    // 🔍 Filter rows using one condition
-    public void filterData(String schema, String table, String column, String condition, String value) {
-        FilterRequest request = FilterRequest.newBuilder()
-                .setSchemaName(schema)
-                .setTableName(table)
-                .setColumnName(column)
-                .setFilterCondition(condition)
-                .setValue(value)
-                .build();
-
-        try {
-            FilterResponse response = blockingStub.filterData(request);
-            System.out.println("🔍 Filtered Rows:");
-            for (RowData row : response.getFilteredRowsList()) {
-                System.out.println(" - " + String.join(" | ", row.getValuesList()));
-            }
-        } catch (Exception e) {
-            System.err.println("❌ Error filtering data: " + e.getMessage());
-        }
+    // 🔍 Filter rows using one condition (GUI version)
+    public FilterResponse filterData(FilterRequest request) {
+        return blockingStub.filterData(request);
     }
 
-    // 🔃 Sort table by a given column
-    public void sortData(String schema, String table, String column, String order) {
-        SortRequest request = SortRequest.newBuilder()
-                .setSchemaName(schema)
-                .setTableName(table)
-                .setColumnName(column)
-                .setSortOrder(order)
-                .build();
-
-        try {
-            SortResponse response = blockingStub.sortData(request);
-            System.out.println("🔃 Sorted Rows (" + order + "):");
-            for (RowData row : response.getSortedRowsList()) {
-                System.out.println(" - " + String.join(" | ", row.getValuesList()));
-            }
-        } catch (Exception e) {
-            System.err.println("❌ Error sorting data: " + e.getMessage());
-        }
+    // 🔃 Sort table by a given column (GUI version)
+    public SortResponse sortData(SortRequest request) {
+        return blockingStub.sortData(request);
     }
 
     // 🔧 Modify the type of a column

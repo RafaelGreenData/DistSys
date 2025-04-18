@@ -10,6 +10,9 @@ import com.dbmapp.client.TableManagementClient;
 import com.dbmapp.client.CSVImportClient;
 import com.dbmapp.client.FilteringSortingClient;
 
+import com.dbmapp.grpc.FilteringSortingOuterClass.FilterRequest;
+import com.dbmapp.grpc.FilteringSortingOuterClass.SortRequest;
+
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.ManagedChannel;
@@ -135,7 +138,16 @@ public class DbmApp {
                                                 String filterCond = scanner.nextLine();
                                                 System.out.print("Enter filter value: ");
                                                 String filterVal = scanner.nextLine();
-                                                filterClient.filterData(activeSchema, table, filterCol, filterCond, filterVal);
+
+                                                FilterRequest filterRequest = FilterRequest.newBuilder()
+                                                        .setSchemaName(activeSchema)
+                                                        .setTableName(table)
+                                                        .setColumnName(filterCol)
+                                                        .setFilterCondition(filterCond)
+                                                        .setValue(filterVal)
+                                                        .build();
+
+                                                filterClient.filterData(filterRequest);
                                                 break;
 
                                             case 2:
@@ -143,7 +155,15 @@ public class DbmApp {
                                                 String sortCol = scanner.nextLine();
                                                 System.out.print("Enter sort order (ASC or DESC): ");
                                                 String sortOrder = scanner.nextLine();
-                                                filterClient.sortData(activeSchema, table, sortCol, sortOrder);
+
+                                                SortRequest sortRequest = SortRequest.newBuilder()
+                                                        .setSchemaName(activeSchema)
+                                                        .setTableName(table)
+                                                        .setColumnName(sortCol)
+                                                        .setSortOrder(sortOrder)
+                                                        .build();
+
+                                                filterClient.sortData(sortRequest);
                                                 break;
 
                                             case 3:

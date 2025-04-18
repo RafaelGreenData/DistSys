@@ -18,6 +18,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import java.util.List;
 
@@ -31,26 +32,27 @@ public class TableManagementClient {
     public TableManagementClient(ManagedChannel channel) {
         this.blockingStub = TableManagementGrpc.newBlockingStub(channel);
     }
+    
+    public TableManagementGrpc.TableManagementBlockingStub getBlockingStub() {
+    return blockingStub;
+    }
 
     // List all tables in a given schema
-    public void getTables(String schemaName) {
+   public List<String> getTables(String schemaName) {
+    List<String> tables = new ArrayList<>();
+    try {
         SchemaRequest request = SchemaRequest.newBuilder()
                 .setSchemaName(schemaName)
                 .build();
 
-        try {
-            TableListResponse response = blockingStub.getTables(request);
-            List<String> tables = response.getTablesList();
-
-            System.out.println("📦 Tables in schema '" + schemaName + "':");
-            for (String table : tables) {
-                System.out.println(" - " + table);
-            }
-
-        } catch (StatusRuntimeException e) {
-            System.err.println("❌ Failed to get tables: " + e.getMessage());
-        }
+        TableListResponse response = blockingStub.getTables(request);
+        tables.addAll(response.getTablesList());
+    } catch (Exception e) {
+        System.err.println("Error getting table list: " + e.getMessage());
     }
+    return tables;
+}
+
 
     // View the first N rows from a given table in a schema
     public void viewTableData(String schemaName, String tableName, int rowLimit) {
